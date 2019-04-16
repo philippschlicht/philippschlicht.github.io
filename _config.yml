@@ -1,1 +1,5 @@
+name: Philipp Schlicht
 theme: jekyll-theme-cayman
+title: [Philipp Schlicht]
+description: [Set Theory]
+plugins: ['jekyll/scholar']
