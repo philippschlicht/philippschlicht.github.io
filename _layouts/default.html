@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+{% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' |
+append: site.github.build_revision | relative_url }}">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"> 
+</script>
+  </head>
+  <body>
+    <section class="page-header">
+	<div id="header">
+  	<img style="float: left;" src="/images/header.jpg" alt="picture" />
+ 	</div> 
+      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+   
+        <a href="/" class="nav">About</a> &nbsp;&nbsp; <a href="/news" class="nav">News</a> &nbsp;&nbsp; <a href="/cv" class="nav">CV</a> 
+	    &nbsp;&nbsp; <a href="/publications" class="nav">Publications</a> &nbsp;&nbsp; <a href="/talks" class="nav">Talks</a> 
+	    &nbsp;&nbsp; <a href="/teaching" class="nav">Teaching</a>
+      
+    </section>
+	
+
+	    <div class="main-content">
+	    	<!--<section id="main-content">-->
+			{{ content }}
+			<!--</section>-->
+	    
+	   <!-- <aside class="sidebar small-sidebar right-sidebar">
+		    <h4> Links </h4>
+		     </aside>-->
+		    
+	<footer class="site-footer">
+	       Some links you might be interested in: <a href="http://boolesrings.org">Booles'Rings</a> <a href="https://ests.wordpress.com">ESTS</a>
+
+         </footer>
+	    </div>
+	
+	    
+      
+	    
+
+    
+  </body>
+</html>
+
+
+
