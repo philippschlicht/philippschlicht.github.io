@@ -1,11 +1,22 @@
 ---
 layout: default
-title: My latest posts
+title: STUK 2
 ---
+
+	<body style="font-family:times new roman;"> 
+	
 	<h1>{{ page.title }}</h1>
+	
+	
+	Set Theory in the United Kingdom (STUK 2) will take place Wednesday, 8 May at the School of Mathematics of the University of Bristol. 
+	
+	
+
 	<ul class="posts">
 
 	  {% for post in site.posts %}
 	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	  {% endfor %}
 	</ul>
+	
+	</body> 
