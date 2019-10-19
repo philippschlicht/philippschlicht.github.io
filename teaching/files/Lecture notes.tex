@@ -247,7 +247,7 @@ textsize=footnotesize,color=yellow!40, bordercolor=white]{todonotes}
 \date{\today}
 
 
-\title[Lecture notes: Countable Borel equivalence relations]{Lecture notes: An introduction to countable Borel equivalence relations and countable group actions}
+\title[Lecture notes: Countable Borel equivalence relations]{Lecture notes: An introduction to countable Borel equivalence relations and actions of countable groups}
 
 %\begin{abstract} t
 %Lecture notes from the lecture Advanced mathematical logic: Model theory, Bonn October-November 2017. 
@@ -269,11 +269,10 @@ textsize=footnotesize,color=yellow!40, bordercolor=white]{todonotes}
 %%%%%%%%%%%%
 \section{Introduction} 
 
-A Borel equivalence relation on a Polish space is called \emph{finite} or \emph{countable}, respectively, if all its equivalence classes are finite or countable. 
-For instance, the orbit equivalence relation of any action of a countable group by Borel automorphisms is a countable Borel equivalence relations. 
+A Borel equivalence relation on a Polish space is called \emph{countable} if all its equivalence classes are countable. 
+The standard example is an orbit equivalence relation of an action of a countable group by Borel automorphisms. 
 %Moreover, this implication can be reversed by a theorem of Feldman and Moore (see later): any countable Borel equivalence relation is induced by a Borel action of a countable group. 
 %By a theorem of Feldman and Moore, the countable Borel equivalence relations are precisely the orbit equivalence relations of Borel actions of countable groups. 
-
 
 \begin{example*} 
 \begin{enumerate-(a)} 
@@ -287,73 +286,84 @@ The (left) shift action $\Gamma_2$ $\curvearrowright$ $2^{\Gamma_2}$, $(\gamma\c
 \end{enumerate-(a)} 
 \end{example*} 
 
-We study connections between properties of equivalence relations and the groups whose actions generate them. 
-
 %\begin{itemize} 
 %\item 
 %Countable Borel equivalence relations and actions of countable groups, hyperfinite equivalence relations and actions of $\ZZ$ 
 %\end{itemize} 
 
-Suppose that $E_{\Gamma\curvearrowright X}$, $E_{\Delta\curvearrowright Y}$ are the orbit equivalence relations of group actions $\Gamma\curvearrowright X$ and $\Delta\curvearrowright Y$. 
-Next is the standard way to compare these two relations. 
+The basic problem is to describe the complexity of equivalence relations in comparison with each other. 
+Suppose that $E_\Gamma=E_{\Gamma\curvearrowright X}$ and $E_\Delta=E_{\Delta\curvearrowright Y}$ are the orbit equivalence relations of group actions $\Gamma\curvearrowright X$ and $\Delta\curvearrowright Y$. 
+The coarsest way to compare these two relations is the following. 
 
 \begin{definition*} 
-$E_{\Gamma\curvearrowright X}$ is \emph{(Borel) reducible} to $E_{\Delta\curvearrowright Y}$ ($E_{\Gamma\curvearrowright X}\leq E_{\Delta\curvearrowright  Y}$) if there is a Borel measurable \emph{reduction} $f\colon X\rightarrow Y$ of $E_{\Gamma\curvearrowright X}$ to $E_{\Delta\curvearrowright Y}$, i.e. for all $xx_0,x_1\in X$, 
-$(x_0,x_1)\in E_{\Gamma\curvearrowright X}\Longleftrightarrow (f(x_0),f(x_1))\in E_{\Delta\curvearrowright Y}$. 
+$E_\Gamma$ is \emph{Borel reducible} to $E_\Delta$ ($E_\Gamma\leq E_\Delta$) if there is a Borel measurable \emph{reduction} $f\colon X\rightarrow Y$ of $E_\Gamma$ to $E_\Delta$, i.e. for all $x_0,x_1\in X$, we have 
+$(x_0,x_1)\in E_\Gamma\Longleftrightarrow (f(x_0),f(x_1))\in E_\Delta$. 
 \end{definition*} 
 
+Since all reductions will be assumed to be Borel measurable, we will simply speak of reductions. 
 An equivalence relation is called \emph{smooth} if it is reducible to equality. 
-Moreover, \emph{least} and \emph{universal} is meant with respect to the quasi-ordering of Borel reducibility. 
-We study the following topics in reducibility: 
-
-\begin{itemize} 
-\item 
-Universal equivalence relations among those induced by actions of a fixed countable group, 
-universal countable Borel equivalence relations 
-\item 
-Harrington, Kechris, Louveau (1990): there is a least non-smooth Borel equivalence relation 
-\item 
-Isomorphism problems for countable structures 
-\end{itemize} 
-
-There are also finer modes of comparison for group actions. Any group action will be assumed to be Borel measurable. 
-We have three notions of equivalence: 
+Since these relations are arguably trivial, the interesting stuff begins beyond them. 
+We will see that $\sigma_\alpha$ in the example above is non-smooth if $\alpha$ is irrational. But this is only the simplest type of non-smooth equivalence relation. 
+Just beyond smoothness, it is interesting to study finer notions of equivalence: 
 
 \begin{definition*} 
-Let $E=E_{\Gamma\curvearrowright X}$ and $F=E_{\Delta\curvearrowright Y}$. 
-
+%Let $E=E_{\Gamma\curvearrowright X}$ and $F=E_{\Delta\curvearrowright Y}$. 
 \begin{enumerate-(a)} 
 \item 
-$E$, $F$ are \emph{Borel bi-reducible} ($E\equiv F$) if $E\leq F$ and $F\leq E$. 
+$\Gamma\curvearrowright X$, $\Delta\curvearrowright Y$ are \emph{conjugate} if there is a group isomorphism $\pi\colon \Gamma\rightarrow \Delta$ and a Borel isomorphism $f\colon X\rightarrow Y$ with $f(\gamma x)= \pi(\gamma) f(x)$ for all $x\in X$ and $\gamma\in \Gamma$. 
 \item 
-$E$, $F$ are \emph{orbit equivalent}\footnote{or \emph{Borel isomorphic}} (OE) if there is a Borel isomorphism $f\colon X\rightarrow Y$ with $f(\Gamma x)=\Delta f(x)$ for all $x\in X$. 
+$E_\Gamma$, $E_\Delta$ are \emph{orbit equivalent}\footnote{or \emph{Borel isomorphic}} (OE) if there is a Borel isomorphism $f\colon X\rightarrow Y$ with $f(\Gamma x)=\Delta f(x)$ for all $x\in X$. 
 \item 
-$E$, $F$ are \emph{conjugate} if there is a group isomorphism $\pi\colon \Gamma\rightarrow \Delta$ and a Borel isomorphism $f\colon X\rightarrow Y$ with $f(\gamma x)= \pi(\gamma) f(x)$ for all $x\in X$ and $\gamma\in \Gamma$. 
+$E_\Gamma$, $E_\Delta$ are \emph{Borel bi-reducible} ($E_\Gamma\equiv E_\Delta$) if $E_\Gamma\leq E_\Delta$ and $E_\Delta\leq E_\Gamma$. 
 \end{enumerate-(a)} 
 \end{definition*} 
 
-We have the implications 
-
-$$(\Gamma\curvearrowright X \sim^{\mathrm{Conj}} \Delta\curvearrowright Y) \Longrightarrow 
-(\Gamma\curvearrowright X \sim^{\mathrm{OE}} \Delta\curvearrowright Y) \Longrightarrow 
-(\Gamma\curvearrowright X \equiv \Delta\curvearrowright Y) $$ 
-
-In general, orbit equivalence is much finer than conjugacy, as we will see in several examples and results below. 
+We have the implications (a) $\Rightarrow$ (b) $\Rightarrow$ (c). 
+%$$(\Gamma\curvearrowright X \equiv^{\mathrm{Conj}} \Delta\curvearrowright Y) \Longrightarrow 
+%(\Gamma\curvearrowright X \equiv^{\mathrm{OE}} \Delta\curvearrowright Y) \Longrightarrow 
+%(E_\Gamma \equiv E_\Delta) $$ 
 \emph{Rigidity} is the phenomenon that these implications can be reversed in some cases. 
-The converse phenomenon is \emph{elasticity}. For example, $\ZZ$ and $\oplus_{n\in\NN} \ZZ/2\ZZ$ have actions with the same orbit equivalence relation. 
-Topics in orbit equivalence: 
+The converse phenomenon is \emph{elasticity}: for instance, $\ZZ$ and $\oplus_{n\in\NN} \ZZ/2\ZZ$ have actions with the same orbit equivalence relation, so the implication (b) $\Rightarrow$ (c) cannot be reversed. 
+This shows that orbit equivalence is much finer than conjugacy. 
+This phenomenon may depend on the group: for instance, $\ZZ$ has many non-equivalent actions, but for some other groups there is only one ergodic measure preserving free action up to orbit equivalence. 
+It is therefore important to study connections between groups and orbit equivalence relations of their actions. 
 
-\begin{itemize} 
-\item 
-Dye (1959): any two ergodic p.m.p. transformations are orbit equivalent. 
-\end{itemize} 
+Borel actions of countable groups have been intensively studied in the last decades from the viewpoints of descriptive set theory, dynamics and measured group theory \cite{MR2827853, MR2711968, MR3612001, MR3359054, MR2583950, KechrisShinko2019, Ioana2019}. 
+Still there are many long-standing open questions in the focus of current research. 
 
-\bigskip 
-\noindent 
-{\bf Literature:} 
-Su Gao: Invariant descriptive set theory; 
-Alexander S. Kechris and Benjamin D. Miller: Topics in orbit equivalence, 
-Alexander S. Kechris: Classical descriptive set theory 
+We want to study some of the fundamental results in this area, both from the descriptive and measure-theoretic viewpoints. 
+For instance, we want to study universal equivalence relations for actions of countable groups, Dye's theorem from 1959 that any two ergodic probability measure preserving actions of $\ZZ$ are orbit equivalent, Harrington, Kechris and Louveau's result from 1990 that there exists a least non-smooth Borel equivalence relation, and connections with logic and model theory related to the complexity of isomorphism problems for countable structures. 
+The book \cite{Kechris2019} gives an overview of the theory of countable Borel equivalence relations. 
+ 
+The main reference for the first part of the course is the book \emph{Topics in orbit equivalence} by Alexander S. Kechris and Benjamin D. Miller \cite{MR2095154}. 
+Most of the background in descriptive set theory can be found in \cite{MR2455198, MR1321597}. 
+
+
+%In the following, \emph{least} and \emph{universal} is meant with respect to the quasi-ordering of Borel reducibility. 
+%We study the following topics in reducibility: 
+%\begin{itemize} 
+%\item 
+%Universal equivalence relations among those induced by actions of a fixed countable group, 
+%universal countable Borel equivalence relations 
+%\item 
+%Harrington, Kechris, Louveau (1990): there is a least non-smooth Borel equivalence relation 
+%\item 
+%Isomorphism problems for countable structures 
+%\end{itemize} 
+%
+%Topics in orbit equivalence: 
+%
+%\begin{itemize} 
+%\item 
+%Dye (1959): any two ergodic p.m.p. transformations are orbit equivalent. 
+%\end{itemize} 
+%
+%\bigskip 
+%\noindent 
+%{\bf Literature:} 
+%Su Gao: Invariant descriptive set theory; 
+%Alexander S. Kechris and Benjamin D. Miller: Topics in orbit equivalence, 
+%Alexander S. Kechris: Classical descriptive set theory 
 
 
 
@@ -362,8 +372,11 @@ Alexander S. Kechris: Classical descriptive set theory
 
 %%%%%%%%%%%%
 %%%%%%%%%%%%
-\section{Basic results} 
+\section{Some background in descriptive set theory} 
 
+In section, we review some material on standard Borel spaces, Borel sets, analytic sets and Borel measurable functions, in particular the fact that any two uncountable standard Borel spaces are isomorphic. 
+%We give proofs from scratch. 
+We give very direct and concise proofs from scratch, in contrast to most proofs in the literature, which refer to other theorems. 
 
 %%%%%%%%%%%%
 \subsection{Standard Borel spaces} 
@@ -381,6 +394,10 @@ A pair $(X,\sigma)$ is called a \emph{standard Borel space} if $\sigma$ is the B
 
 It is an easy exercise to show that Polish metric spaces are closed under countable products by taking a weighted sum over the coordinates. 
 
+We always write $(X,d)$, $(Y,d)$, $(Z,d)$ for Polish metric spaces and often omit the metric $d$. 
+We further write $d(A)$ for the \emph{diameter} $\sup_{x,y\in A} d(x,y)$ of a subset $A$ of $X$. 
+Moreover, $B_\epsilon(x)$ denotes the open ball of radius $\epsilon$ around $x$. 
+
 \begin{example} 
 $\RR^n$, Baire space $\NN^\NN$,  Cantor space $2^\NN$, compact metric spaces. 
 \end{example} 
@@ -397,18 +414,30 @@ A tree is called \emph{pruned} if it has no end nodes.
 Let $\Lev_n(T)$ denote the $n$-th level of a tree $T$. 
 %A node $t\in T$ \emph{splits} in $T$ if it has at least $2$ direct successors in $T$. Let $\spl(T)$ denote the set of splitting nodes of $T$. A tree $T$ is called \emph{perfect} if it is nonempty, pruned and every node in $T$ has some node in $\spl(T)$ above it. 
 
-We always write $(X,d)$, $(Y,d)$, $(Z,d)$ for Polish metric spaces. The metric $d$ is often omitted. 
-We write $d(A)$ for the \emph{diameter} $\sup_{x,y\in A} d(x,y)$ of a subset $A$ of $X$. 
-Moreover, $B_\epsilon(x)$ denotes the open ball of radius $\epsilon$ around $x$. 
-
+\bigskip 
 We next show that any two uncountable Polish spaces are \emph{Borel isomorphic} in the following sense. 
 
 \begin{definition} 
-A \emph{Borel isomorphism} $f\colon X\rightarrow Y$ between standard Borel spaces is a bijection that preserves Borel sets in both directions. 
+A \emph{Borel isomorphism} $f\colon A\rightarrow B$ between Borel subsets $A$ and $B$ of standard Borel spaces is a bijection that preserves Borel sets in both directions. 
 \end{definition} 
 
-An \emph{$F_\sigma$-set} is a countable union of closed sets. 
+\begin{proposition} \label{Borel isomorphism of Polish spaces} 
+Any two uncountable Polish spaces are Borel isomorphic. 
+\end{proposition} 
+
+This will follow from the next four lemmas. The first three lemmas show that any uncountable Polish space $X$ is Borel isomorphic to a Borel subset of $\NN^\NN$ and vice versa. The last lemma show that this is sufficient to obtain Proposition \ref{Borel isomorphism of Polish spaces}. 
+
+%\begin{definition} 
+%\begin{enumerate-(a)} 
+%\item 
 An \emph{$\epsilon$-cover} of a subset $A$ of $X$ is a sequence $\vec{A}=\langle A_i\mid i<N\rangle$ with $N\in \NN\cup\{\NN\}$ whose union equals $A$ with $d(A_i)<\epsilon$ and $\overline{A_i}\subseteq A$ for all $i\in\NN$. 
+%\item 
+%Let $T$ be a pruned subtree of $\NN^{<\NN}$ and $\vec{\epsilon}=\langle \epsilon_i \mid i\in\NN\rangle$ be any sequence in $\RR^+$ converging to $0$. 
+%A \emph{$T$-scheme} for $X$ is a family $\vec{A}=\langle A_t\mid t\in T\rangle$ of nonempty subsets of $X$ with $A_0=X$ that satisfies the following properties for all $t\in T$: \\ 
+% (i) $A_t=\bigcup_{ti \in T} A_{ti}$ (disjoint), \ \ (ii) $\overline{A_{ti}} \subseteq A_t$ if $ti\in T$, and \ \ (iii) $d(A_t)<\epsilon_n$ if $|t|=n$. 
+%\end{enumerate-(a)} 
+%\end{definition} 
+An \emph{$F_\sigma$-set} is a countable union of closed sets. 
 
 \begin{lemma} \label{partition epsilon-covers} 
 Let $\epsilon>0$. 
@@ -441,82 +470,96 @@ Then $\vec{D}$ is a disjoint $\epsilon$-cover of $C\cap D$ consisting of $F_\sig
 \end{proof} 
 
 \begin{lemma} \label{Polish space as continuous image} 
-For any Polish space $X$, there exists a closed subset $A$ of $\NN^\NN$ and a bijection $f\colon A\rightarrow X$ that is both continuous and a Borel isomorphism.\footnote{In fact, any injective Borel measurable function is a Borel isomorphism onto its image, but we do not prove this here. } 
+Any Polish space $X$ is Borel isomorphic to a Borel subset of $\NN^\NN$. 
+In fact, there is a closed subset $A$ of $\NN^\NN$ and a continuous Borel isomorphism $f\colon A\rightarrow X$.\footnote{In fact, any continuous bijection is a Borel isomorphism, but we don't prove this here. } 
 \end{lemma} 
 \begin{proof} 
 Let $\vec{\epsilon}=\langle \epsilon_i \mid i\in\NN\rangle$ be a sequence in $\RR^+$ converging to $0$. 
-By iterative applications of Lemma \ref{partition epsilon-covers}, we obtain a tree $T\subseteq \NN^{<\NN}$ without end nodes and a family $\vec{A}=\langle A_t\mid t\in T\rangle$ of nonempty $F_\sigma$-subsets of $X$ with $A_0=X$ that satisfies the following properties for all $t\in T$: 
-\begin{enumerate-(a)} 
-\item 
-$A_t=\bigcup_{ti \in T} A_{ti}$ (disjoint), 
-\item 
-$\overline{A_{ti}} \subseteq A_t$ and 
-\item 
-$d(A_t)<\epsilon_n$ if $|t|=n$. 
-\end{enumerate-(a)} 
+By iterative applications of Lemma \ref{partition epsilon-covers}, we obtain a tree $T\subseteq \NN^{<\NN}$ without end nodes and a family $\vec{A}=\langle A_t\mid t\in T\rangle$ of nonempty $F_\sigma$-subsets of $X$ with $A_0=X$ that satisfies the following properties for all $t\in T$: \\ 
+\indent 
+(a) $A_t=\bigcup_{ti \in T} A_{ti}$ (disjoint), \ \ (b) $\overline{A_{ti}} \subseteq A_t$ if $ti\in T$, and \ \ (c) $d(A_t)<\epsilon_n$ if $|t|=n$. \\ 
+%\begin{enumerate-(a)} 
+%\item 
+%$A_t=\bigcup_{ti \in T} A_{ti}$ (disjoint), 
+%\item 
+%$\overline{A_{ti}} \subseteq A_t$ and 
+%\item 
+%$d(A_t)<\epsilon_n$ if $|t|=n$. 
+%\end{enumerate-(a)} 
+%Note that $A:=[T]$ is a closed subset of $\NN^{<\NN}$. 
+We then define $f\colon [T]\rightarrow X$ by choosing $f(x)$ as the unique element of $\bigcap_{n\in\NN} A_{x\upharpoonright n}$. 
+The latter is nonempty by (b), (c) and completeness of $X$, and has a unique element by (c). 
 
-Note that $[T]$ is a closed subset of $\NN^{<\NN}$. 
-
-Define $f\colon [T]\rightarrow X$ by letting $f(x)$ denote the unique element of $\bigcap_{n\in\NN} A_{x\upharpoonright n}$. 
-The latter is nonempty by (b), (c) and completeness of $X$, and unique by (c). 
-
+\begin{claim*} 
+$f$ is bijective. 
+\end{claim*} 
+\begin{proof} 
 It follows from (a) that $f$ is injective. 
 To see that $f$ is surjective, take any $x\in X$. 
 By (a), there is for each $n\in\NN$ a unique $t_n\in T$ of length $n$ with $x\in A_{t_n}$. 
 By (b), $t_i\subseteq t_j$ for $i\leq j$. 
 Hence $f(y)=x$ for $y=\bigcup_{i\in\NN} t_i$. 
+\end{proof} 
 
-by (c), $f$ is continuous: if $f(x)\in U$ and $U$ is open, then $A_{x{\upharpoonright}n}\subseteq U$ for sufficiently large $n$. 
+\begin{claim*} 
+$f$ is continuous. 
+\end{claim*} 
+\begin{proof} 
+If $U$ is open and $f(x)\in U$, then $A_{x{\upharpoonright}n}\subseteq U$ for sufficiently large $n$ by (c). 
+\end{proof} 
 
-To see that $f$ is a Borel isomorphism, it is sufficient that the images of Borel sets are Borel. 
+\begin{claim*} 
+$f$ is a Borel isomorphism. 
+\end{claim*} 
+\begin{proof} 
+It suffices that the images of Borel sets are Borel. 
 This holds since $f$ maps each basic open set $N_t$ onto $A_t$ and $f$ is bijective. 
 \end{proof} 
-
-Using Lemma \ref{Polish space as continuous image}, it is easy to see that any nonempty Polish space $X$ is the image of $\NN^\NN$ under a continuous function. 
-By the lemma, it suffices to show this in the case that $X$ is a closed subset of $\NN^\NN$. In this case, map each $x\in \NN^\NN$ to the closest element of $X$. 
-
-\begin{proposition} \label{Borel isomorphism of Polish spaces} 
-Any two uncountable Polish spaces are Borel isomorphic. 
-\end{proposition} 
-\begin{proof} 
-The statement follows from the next two lemmas. 
+Thus $f$ is as required. 
 \end{proof} 
 
+Using the previous lemma, one can see that any nonempty Polish space $X$ is the image of $\NN^\NN$ under a continuous function. 
+By the lemma, it suffices to show this in the case that $X=[T]$ is a closed subset of $\NN^\NN$. In this case, map each $x\in \NN^\NN$ to the leftmost $y\in [T]$ with $x{\upharpoonright}n \subseteq y$, where $n$ is maximal with $x{\upharpoonright}n\in T$. 
+
 \begin{lemma} 
-For any uncountable Polish space $X$, there is a Borel isomorphism $f\colon \NN^\NN\rightarrow X$ onto a Borel subset of $X$. 
+If $X$ is an uncountable Polish space, then $\NN^\NN$ is Borel isomorphic to a Borel subset of $X$. 
 \end{lemma} 
 \begin{proof} 
 Fix a sequence $\vec{\epsilon}=\langle \epsilon_i \mid i\in\NN\rangle$ in $\RR^+$ converging to $0$. 
-
-It is easy to construct a family $\vec{U}=\langle U_t\mid t\in \NN^{<\NN}\rangle$ of open subsets of $X$ such that $\overline{U_t}\subseteq U_s$ for all $s\subseteq t$, $U_s\cap U_t=\emptyset$ for all $s\neq t$ with $|s|=|t|$, and $d(U_t)<\epsilon_n$ if $|t|=n$. 
-
+It is easy to construct a family $\vec{U}=\langle U_t\mid t\in \NN^{<\NN}\rangle$ of uncountable open subsets of $X$ such that: 
+(a) $\overline{U_t}\subseteq U_s$ for all $s\subseteq t$, \\ 
+(b) $U_s\cap U_t=\emptyset$ for all $s\neq t$ with $|s|=|t|$, and \ \  (c) $d(U_t)<\epsilon_n$ if $|t|=n$. 
 %$\lim_{i\rightarrow \infty} d(U_{ti})=0$ for all $t\in \NN^{<\NN}$. 
 % and $\lim_{i\rightarrow \infty} x_i\in Q$ for any sequence $\vec{x}=\langle x_i\mid i\in\NN\rangle$ with $x_i\in U_{ti}$ for all $i\in\NN$. 
 
-Define $f\colon \NN^\NN\rightarrow X$ as follows. Let $f(x)$ be the unique element of $\bigcap_{n\in \NN} U_{x{\upharpoonright}n}$. It is clear that $f$ is a homeomorphism onto its image. 
-
+Define $f\colon \NN^\NN\rightarrow X$ by choosing $f(x)$ as the unique element of $\bigcap_{n\in \NN} U_{x{\upharpoonright}n}$. 
+It is then easy to see that $f$ is a homeomorphism onto its image. 
 To see that $f(\NN^\NN)$ is Borel, let $U_n=\bigcup_{|t|=n} U_t$. We then have $f(\NN^\NN)=\bigcap_{n\in\NN} U_n$. 
 \end{proof} 
 
 \begin{lemma} 
-Suppose that there is a Borel isomorphism $f\colon X\rightarrow Y$ onto a Borel subset of $Y$, and vice versa. 
+Suppose that $X$ is Borel isomorphism to a Borel subset of $Y$ and vice versa. 
 Then $X$ and $Y$ are Borel isomorphic. 
 \end{lemma} 
 \begin{proof} 
-Suppose that $f\colon X\rightarrow Y$ and $g\colon Y\rightarrow X$ are as above. 
+Suppose that $f\colon X\rightarrow Y$ and $g\colon Y\rightarrow X$ are Borel isomorphisms onto Borel sets. 
+We call a pair $(A,B)$ of Borel subsets of $X$ and $Y$ \emph{nice} if $f\colon A\rightarrow B$ and $g\colon B\rightarrow A$ are well-defined.\footnote{This is shorthand for $\ran(f{\upharpoonright}A)\subseteq B$ and $\ran(g{\upharpoonright}B)\subseteq A$. } 
 
-We call a pair $(A,B)$ of Borel subsets of $X$ and $Y$, respectively, \emph{nice} if $f\colon A\rightarrow B$ and $g\colon B\rightarrow A$ are well-defined. 
-
-We claim that for any nice pair $(A,B)$, there is a nice pair $(A',B')$ with $A'\subseteq A\cap g(B)$ and $B'\subseteq B\cap f(A)$ such that $A\setminus A'$ and $B\setminus B'$ are Borel isomorphic. 
+\begin{claim*} 
+For any nice pair $(A,B)$, there is a nice pair $(A_*,B_*)$ such that $A_*\subseteq A\cap g(B)$, $B_*\subseteq B\cap f(A)$ and the Borel sets $A\setminus A_*$, $B\setminus B_*$ are Borel isomorphic. 
+\end{claim*} 
+\begin{proof} 
 To see this, let $A^*=A\setminus g(B)$, $B^*=B\setminus f(A)$. 
-Then $A^*$, $g(B^*)$ are disjoint, $B^*$, $f(A^*)$ are disjoint and $f\colon A^*\rightarrow f(A^*)$, $g\colon B^*\rightarrow g(B^*)$ are Borel isomorphisms. 
-Let $A'=A\setminus (A^*\cap g(B^*))$ and $B'=B\setminus (B^*\cap f(A^*))$. Since $A'\subseteq g(B)$ and $B'\subseteq f(A)$, they are as required. 
+Since $A^*\cap g(B^*)=B^*\cap f(A^*)=\emptyset$, the maps $f\colon A^*\rightarrow f(A^*)$ and $g\colon B^*\rightarrow g(B^*)$ witness that 
+$A^*\cup g(B^*)$ and $B^*\cup f(A^*)$ are Borel isomorphic. 
+Thus $A_*=A\setminus (A^*\cup g(B^*))=g(B) \setminus g(B^*)$ and $B_*=B\setminus (B^*\cup f(A^*))=f(A)\setminus f(A^*)$ are as required. 
+\end{proof} 
 
-Starting with $A_0=X$ and $B_0=Y$ and using the claim iteratively, we obtain decreasing sequences $\vec{A}=\langle A_n\mid n\in\NN\rangle$ and $\vec{B}=\langle B_n\mid n\in\NN\rangle$ such that $(A_n, B_n)$ is nice for all $n\in\NN$. 
+Let $A_0=X$ and $B_0=Y$. By iterative applications of the previous claim, we obtain decreasing sequences $\vec{A}=\langle A_n\mid n\in\NN\rangle$ and $\vec{B}=\langle B_n\mid n\in\NN\rangle$ of Borel sets such that $(A_n, B_n)$ is nice for all $n\in\NN$. Let $A=\bigcap_{n\in\NN} A_n$ and $B=\bigcap_{n\in\NN}B_n$. 
 
-It suffices to show that $A=\bigcap_{n\in\NN} A_n$ and $B=\bigcap_{n\in\NN}B_n$ are Borel isomorphic. 
-Since $f\colon A_n\rightarrow B_n$ is well-defined for all $n\in\NN$, $f\colon A\rightarrow B$ is well-defined. 
-Since $B_{n+1}\subseteq f(A_n)$ for all $n\in \NN$, $f\colon A\rightarrow B$ is surjective. 
+It suffices to show that $A$ and $B$ are Borel isomorphic via $f$. 
+To see this, note that $f\colon A\rightarrow B$ is well-defined, since $f\colon A_n\rightarrow B_n$ is well-defined for all $n\in\NN$. 
+Moreover, $f\colon A\rightarrow B$ is surjective, since $B_{n+1}\subseteq f(A_n)$ for all $n\in \NN$. 
 \end{proof} 
 
 
@@ -527,12 +570,15 @@ Since $B_{n+1}\subseteq f(A_n)$ for all $n\in \NN$, $f\colon A\rightarrow B$ is 
 \subsection{Analytic sets} 
 
 Let $p\colon X\times Y\rightarrow X$ denote the first projection. 
+
+\begin{definition} 
 A subset $A$ of $X$ is called \emph{analytic} if $A=p(B)$ for some Borel subset $B$ of $X\times Y$. 
+\end{definition} 
 
 By Proposition \ref{Borel isomorphism of Polish spaces}, these are precisely the images of analytic subsets of $\NN^\NN$ under Borel isomorphisms. 
 Hence we can work in $\NN^\NN$ to study their properties. 
 
-We will go through a slight detour. 
+To do this, we will go through a slight detour. 
 We call a subset $A$ of $\NN^\NN$ \emph{*analytic} if $A=p[C]$ for some closed subset of $\NN^\NN\times \NN^\NN$, equivalently $A=p[T]=\{x\mid \exists y\ (x,y)\in [T]\}$ for some subtree $T$ of $(\NN\times\NN)^{<\NN}$. 
 
 \begin{problem} \label{characterization of analytic sets} 
@@ -548,7 +594,7 @@ Every analytic subsets of $\NN^\NN$ is *analytic.
 
 The previous result also holds for finite products of $\NN^\NN$, by observing that the proof still works or noting that they are homeomorphic to $\NN^\NN$. 
 
-\begin{lemma} 
+\begin{lemma} \label{analytic sets as continuous images of N^N} 
 Every nonempty analytic subset of $X$ equals $f(\NN^\NN)$ for some continuous $f\colon \NN^\NN\rightarrow X$. 
 \end{lemma} 
 \begin{proof} 
@@ -558,26 +604,22 @@ Take an analytic subset $A$ of $X$. By Lemma \ref{Polish space as continuous ima
 Since $g$ is continuous, it suffices to find a continuous $f\colon Y\rightarrow \NN^\NN$ with $f(Y)=B:=g^{-1}(A)$. 
 
 Since analytic sets are preserved under Borel isomorphisms, $B$ is an analytic subset of $Z$ and thus of $\NN^\NN$. 
-
-
 Let $C$ be a Borel subset of $\NN^\NN\times \NN^\NN$ with $B=p(C)$. 
-
 Since Borel subsets of $\NN^\NN\times \NN^\NN$ are *analytic by Problem \ref{characterization of analytic sets} \ref{characterization of analytic sets - closure}, there is a closed subset $D$ of $(\NN^\NN)^3$ with $B=p(D)$. 
 Then $p\colon D\rightarrow \NN^\NN$ is as required. 
 \end{proof} 
 
-Subsets $A$, $B$ of $X$ are called \emph{Borel separated} if there's a Borel set $C$ with $A\subseteq C$ and $B\subseteq X\setminus C$. 
+Subsets $A$, $B$ of $X$ are called \emph{Borel separated} if there is a Borel set $C$ with $A\subseteq C$ and $B\subseteq X\setminus C$. 
 
 \begin{proposition} \label{separation of analytic sets} 
 Any two disjoint analytic subsets $A$, $B$ of $X$ are Borel separated. 
 \end{proposition} 
 \begin{proof} 
-It suffices to show this for $X=\NN^\NN$, and by Problem \ref{characterization of analytic sets} $A$ and $B$ are *analytic. 
-Let $f\colon [S]\rightarrow A$ and $g\colon [T]\rightarrow B$ be continuous surjections, where $S$ and $T$ are pruned subtrees of $\NN^{<\NN}$. 
+It suffices to show this for $X=\NN^\NN$, and by Problem \ref{characterization of analytic sets} $A$ and $B$ are then *analytic. 
+Let $f\colon [S]\rightarrow A$ and $g\colon [T]\rightarrow B$ be continuous surjections, where $S$ and $T$ are pruned subtrees of $\NN^{<\NN}$.\footnote{One can assume that $[S]=[T]=\NN^\NN$ to simplify the notation at the expense of using Lemma \ref{analytic sets as continuous images of N^N}. } 
 
 Suppose that $A$, $B$ are not Borel separated. 
-
-We construct increasing sequences $\vec{s}=\langle s_i\mid i\in\NN\rangle$ and $\vec{t}=\langle t_i\mid i\in\NN\rangle$ in $\NN^{<\NN}$ such that for all $i\in\NN$, $f(N_{s_i})$ and $g(N_{t_i})$ are not Borel separated. 
+We then construct increasing sequences $\vec{s}=\langle s_i\mid i\in\NN\rangle$ and $\vec{t}=\langle t_i\mid i\in\NN\rangle$ in $\NN^{<\NN}$ such that for all $i\in\NN$, $f(N_{s_i})$ and $g(N_{t_i})$ are not Borel separated as follows. 
 
 Let $s_0=t_0=\emptyset$. 
 Given $s_i$ and $t_i$, there are $k,m\in \NN$ with $s_i k\in S$ and $t_i m\in T$ such that $f(N_{s_i k})$ and $g(N_{t_i m})$ are not Borel separated. 
@@ -587,8 +629,8 @@ Let $s_{i+1}=s_i k$ and $t_{i+1}= t_i m$.
 Let $x=\bigcup_{i\in\NN} s_i\in [S]$ and $y=\bigcup_{i\in\NN} t_i\in [T]$. 
 Since $A$ and $B$ are disjoint, $f(x)\neq g(y)$. 
 Let $U$, $V$ be disjoint open subsets of $X$ with $f(x)\in U$ and $g(y)\in V$. 
-By continuity, $f(N_{x{\upharpoonright}n})\subseteq U$ and $g(N_{y{\upharpoonright}n})\subseteq V$ for sufficiently large $n$. 
-Then these two sets are Borel separated, contradicting the above facts. 
+By continuity of $f$ and $g$, $f(N_{x{\upharpoonright}n})\subseteq U$ and $g(N_{y{\upharpoonright}n})\subseteq V$ for sufficiently large $n$, so $f(N_{x{\upharpoonright}n})$ and $g(N_{y{\upharpoonright}n})$ are Borel separated. 
+But this contradicts the construction. 
 \end{proof} 
 
 
@@ -623,45 +665,7 @@ These claims follows from the equivalences $x\in f^{-1}(U) \Longleftrightarrow \
 
 
 
-
-
-
-
-
-%\bibliographystyle{alpha}
-%\bibliography{references}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
+\bibliographystyle{alpha}
+\bibliography{references}
   
 \end{document}
