@@ -275,7 +275,7 @@ Borel measurable actions of countable groups have been intensively studied in th
 Still there are many long-standing open questions in the focus of current research. 
 
 We want to study some of the fundamental results in this area, both from the descriptive and measure-theoretic viewpoints. 
-For instance, we want to study universal equivalence relations for actions of countable groups, Dye's theorem from 1959 that any two ergodic probability measure preserving actions of $\ZZ$ are orbit equivalent, Harrington, Kechris and Louveau's result from 1990 that there exists a least non-smooth Borel equivalence relation, and connections with logic and model theory related to the complexity of isomorphism problems for countable structures. 
+For instance, we will study universal equivalence relations for actions of countable groups, Dye's theorem from 1959 that any two ergodic probability measure preserving actions of $\ZZ$ are orbit equivalent, Harrington, Kechris and Louveau's result from 1990 that there exists a least non-smooth Borel equivalence relation, and connections with logic and model theory related to the complexity of isomorphism problems for countable structures. 
  
 The main reference for the first part of the course is the book \emph{Topics in orbit equivalence} by Alexander S. Kechris and Benjamin D. Miller \cite{MR2095154}. 
 Most of the background in descriptive set theory can be found in \cite{MR2455198, MR1321597}. 
@@ -326,11 +326,13 @@ The standard example is an orbit equivalence relation of an action of a countabl
 \begin{example*} 
 \begin{enumerate-(a)} 
 \item 
-The rotation $\sigma_\alpha\colon \ZZ\rightarrow S^1$, $\sigma_\alpha(n)=\exp(\pi i n \alpha)$ by $\alpha$ on the unit sphere in $\CCC$. 
+The rotation by $\alpha$ on the unit sphere in $\CCC$ -- 
+$\sigma_\alpha\colon \ZZ\curvearrowright  S^1$, $\sigma_\alpha(n,x)=\exp(\pi i n \alpha)x$ 
+
 %$\ZZ$ $\curvearrowright$ $\RR$ acts by addition. 
 %$\QQ$ $\curvearrowright$ $\RR$ acts by addition. 
 \item 
-The (left) shift action $\Gamma_2$ $\curvearrowright$ $2^{\Gamma_2}$, $(\gamma\cdot x)(\delta)=x(\gamma^{-1}(\delta))$ for $\Gamma=\FF_2$, the free group on 2 generators. 
+The (left) shift action of $\Gamma=\FF_2$, the free group on 2 generators -- $\Gamma$ $\curvearrowright$ $2^{\Gamma}$, $(\gamma\cdot x)(\delta)=x(\gamma^{-1}(\delta))$. 
 %The action of $\mathrm{SL}_n(\ZZ)$ on the $n$-dimensional torus $\TT^n$. 
 \end{enumerate-(a)} 
 \end{example*} 
@@ -351,7 +353,7 @@ $(x_0,x_1)\in E_\Gamma\Longleftrightarrow (f(x_0),f(x_1))\in E_\Delta$.
 
 Since all reductions will be assumed to be Borel measurable, we will simply speak of reductions. 
 An equivalence relation is called \emph{smooth} if it is reducible to equality. 
-Since these relations are arguably trivial, the interesting stuff begins beyond them. 
+%Since these relations are arguably trivial, the interesting stuff begins beyond them. 
 We will see that $\sigma_\alpha$ in the example above is non-smooth if $\alpha$ is irrational. But this is only the simplest type of non-smooth equivalence relation. 
 Just beyond smoothness, it is interesting to study finer notions of equivalence: 
 
@@ -374,7 +376,7 @@ We have the implications (a) $\Rightarrow$ (b) $\Rightarrow$ (c).
 \emph{Rigidity} is the phenomenon that these implications can be reversed in some cases. 
 The converse phenomenon is \emph{elasticity}: for instance, $\ZZ$ and $\oplus_{n\in\NN} \ZZ/2\ZZ$ have actions with the same orbit equivalence relation, so the implication (b) $\Rightarrow$ (c) cannot be reversed. 
 This shows that orbit equivalence is much finer than conjugacy. 
-This phenomenon may depend on the group: for instance, $\ZZ$ has many non-equivalent actions, but for some other groups there is only one ergodic measure preserving free action up to orbit equivalence. 
+These phenomena may depend on the group: for instance, $\ZZ$ has many non-equivalent actions, but for some other groups there is only one ergodic measure preserving free action up to orbit equivalence. 
 It is therefore important to study connections between groups and orbit equivalence relations of their actions. 
 
 
@@ -404,7 +406,7 @@ A pair $(X,\sigma)$ is called a \emph{standard Borel space} if $\sigma$ is the B
 \end{enumerate-(a)} 
 \end{definition} 
 
-It is an easy exercise to show that Polish metric spaces are closed under countable products by taking a weighted sum over the coordinates. 
+It is an easy exercise to show that Polish spaces are closed under countable products by taking appropriate weighted sums of bounded metrics over the coordinates. 
 
 We always write $(X,d)$, $(Y,d)$, $(Z,d)$ for Polish metric spaces and often omit the metric $d$. 
 We further write $d(A)$ for the \emph{diameter} $\sup_{x,y\in A} d(x,y)$ of a subset $A$ of $X$. 
@@ -423,7 +425,7 @@ It is easy to see that the closed subsets of $\NN^\NN$ are exactly the sets of t
 Let $|t|$ denote the length of a sequence $t\in \NN^{<\NN}$. 
 Let $x{\upharpoonright}n$ denote the restriction of a sequence $x\in \NN^\NN$ to $\{0,\dots,n-1\}$. 
 A tree is called \emph{pruned} if it has no end nodes. 
-Let $\Lev_n(T)$ denote the $n$-th level of a tree $T$. 
+Let $\Lev_n(T)$ denote the $n$-th level of a tree $T$, where $\Lev_0(T)$ consists only of the root. 
 %A node $t\in T$ \emph{splits} in $T$ if it has at least $2$ direct successors in $T$. Let $\spl(T)$ denote the set of splitting nodes of $T$. A tree $T$ is called \emph{perfect} if it is nonempty, pruned and every node in $T$ has some node in $\spl(T)$ above it. 
 
 \bigskip 
@@ -450,6 +452,7 @@ An \emph{$\epsilon$-cover} of a subset $A$ of $X$ is a sequence $\vec{A}=\langle
 %\end{enumerate-(a)} 
 %\end{definition} 
 An \emph{$F_\sigma$-set} is a countable union of closed sets. 
+Note that open sets are $F_\sigma$. 
 
 \begin{lemma} \label{partition epsilon-covers} 
 Let $\epsilon>0$. 
@@ -550,7 +553,7 @@ To see that $f(\NN^\NN)$ is Borel, let $U_n=\bigcup_{|t|=n} U_t$. We then have $
 \end{proof} 
 
 \begin{lemma} 
-Suppose that $X$ is Borel isomorphism to a Borel subset of $Y$ and vice versa. 
+Suppose that $X$ is Borel isomorphic to a Borel subset of $Y$ and vice versa. 
 Then $X$ and $Y$ are Borel isomorphic. 
 \end{lemma} 
 \begin{proof} 
