@@ -1,0 +1,65 @@
+\documentclass[10pt,a4paper]{article}
+ 
+ 
+\usepackage[printwatermark]{xwatermark}
+\usepackage{xcolor}
+\usepackage{lipsum} 
+ 
+\definecolor{light-gray}{gray}{0.10} 
+ 
+%\newwatermark[allpages,color=gray!50,angle=45,scale=3,xpos=0,ypos=0]{DRAFT} 
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[hscale=0.7,vscale=0.8]{geometry}
+\usepackage{amsmath}
+\usepackage[all,cmtip]{xy}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{semantic}
+\usepackage{bussproofs}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{bbm}
+
+\usepackage{mathtools}
+
+\DeclareMathOperator{\Nat}{\ensuremath{\mathbb{N}}}
+\DeclareMathOperator{\Int}{\ensuremath{\mathbb{Z}}}
+\DeclareMathOperator{\Rea}{\ensuremath{\mathbb{R}}}
+\DeclareMathOperator{\Raz}{\ensuremath{\mathbb{Q}}}
+\DeclareMathOperator{\Bol}{\ensuremath{\mathbb{B}}}
+\DeclareMathOperator{\Off}{\ensuremath{offspring}}
+\DeclareMathOperator{\Iff}{iff}
+\DeclareMathOperator{\Bis}{\underline{\longleftrightarrow}}
+
+\newtheorem{theorem}[section]{Theorem}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{proposition}[equation]{Proposition}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{example}{Example}[equation]
+\theoremstyle{definition}
+
+\newcommand{\vir}[1]{``#1''}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\author{Lorenzo Galeotti}
+\title{Computing Over Generalisations of the Reals}
+\date{}
+\begin{document}
+\maketitle
+In classical computability theory computations are thought of as \emph{finite} and \emph{discrete} processes carried out by idealised machines on a \emph{finite} amount of data. Although these assumptions are quite natural, since the beginning of the research in this area, researchers have been developing theories in which these assumptions are weakened.
+
+Particularly interesting are those notions of computability in which the finiteness of the process and of the data are relaxed. Prominent in this area are models of computability over the real line. These machines do indeed work on (sometimes representations of) real numbers and are in some cases allowed to run for infinitely many stages. 
+
+
+An extreme weakening of the finiteness restrictions on computability led to the notion of \emph{transfinite computability}. The idea is that of taking classical models of computability and extend them to the transfinite. Particularly important in this context are the works of Hamkins and Lewis on \emph{Infinite Time Turing Machines} (ITTMs) and of Koepke on \emph{Ordinal Turing Machines} (OTMs).
+
+
+It is natural to ask whether classical notions of computability over the reals can be generalised to the transfinite. The first problem that has to be solved in order to answer this question is that of finding generalisations of the reals which are suitable for computability. The main focus of this talk will be on the development of theories of computability over generalisations of the real line. 
+
+We will begin with a brief introduction to two classical models of computability over the reals. Then, we will present a generalisation of the reals suitable to do real analysis and computability. After this, we will focus on the use of transfinite models of computability in the context of generalisations of the reals. We will present two different approaches to the problem of defining a notion of computability over generalisations of the reals, one which makes use of OTMs and one which uses a generalisation of Blum-Shub-Smale Machines. 
+\end{document}
