@@ -12,7 +12,10 @@
 
 \usepackage{hyperref}
 
+\usepackage[textsize=footnotesize]{todonotes}
+
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{sublemma}{Lemma}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -21,6 +24,7 @@
 \newtheorem{subclaim}{Claim}[sublemma]
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
 \newtheorem{proposition}[theorem]{Proposition}
 
 \newtheorem*{main}{Main~Theorem}
@@ -139,35 +143,269 @@
 
 \newcommand{\G}{\mathcal G}
 \newcommand{\ult}{\mathrm{ult}} 
+\newcommand{\Col}{\mathrm{Col}} 
 
-
-\title{Open problems on generalised Baire spaces}
+\title{Open problems on generalised Baire spaces 2020}
 \begin{document}
 \maketitle
 
 %\begin{abstract} 
-The \emph{Fifth Workshop on Generalised Baire Spaces} takes place in the School of Mathematics of the University of Bristol on 3-4 February, 2020, see \url{<https://philippschlicht.github.io/meetings/>}. 
-This is a list of open problems that were collected and discussed at the workshop. 
-We include a (probably incomplete) list of solved problems from the 2016 problem list. 
+The \emph{Fifth Workshop on Generalised Baire Spaces} took place at the School of Mathematics of the University of Bristol on 3-4 February, 2020, see \url{<https://philippschlicht.github.io/meetings/generalizedbairespaces2020>}. 
+This is an incomplete list of some open problems that were discussed at the workshop. 
+%We include a (probably incomplete) list of solved problems from the 2016 problem list. 
 \footnote{%Collected by Philipp Schlicht. 
-For comments or questions, please email Philipp Schlicht at \href{mailto:philipp.schlicht@bristol.ac.uk} {philipp.schlicht@bristol.ac.uk}.} 
+If you have an answer, comment or further question, please email Philipp Schlicht at \href{mailto:philipp.schlicht@bristol.ac.uk} {philipp.schlicht@bristol.ac.uk}.} 
 %\end{abstract} 
 
 
 %%%%%%%%%%%%%%
-\section{Solutions to the 2016 problem list} 
+%\section{Solutions to the 2016 problem list} 
+
+
+
+
+\iffalse 
+%%%%%%%%%%%%%%
+\section{Current directions} 
+
+
+%%%%%%%%%%%%%%
+\subsection{Philipp Schlicht: Dichotomies} 
+
+\todo[inline]{Rewrite} 
+
+A dichotomy states that an object is either small or large in a prescribed sense. 
+Various fundamental results in descriptive set theory take this form. 
+The simplest example is the perfect set property: the set is required to be either countable or contain a perfect subsets. 
+
+Finding the right dichotomies is therefore important to develop a theory of generalised Baire spaces. 
+
+One aim is to generalise classical and new dichotomies to generalised Baire spaces and find boundaries of possible generalisations. 
+
+Other results are about colourings of graphs. 
+For instance, many results in descriptive set theory have been reproved in recent years as consequences of new dichotomy theorems for graphs in work of Ben Miller and others. 
+
+Various fundamental problems appear in the uncountable setting. 
+
+\begin{enumerate} 
+\item 
+No general determinacy results, while you get determinacy for games of length $\omega$ for free. 
+\item 
+Difficulties with forcings adding subsets of $\kappa$ instead of subsets of $\omega$. 
+\end{enumerate} 
+
+They can often be overcome by finding the right notions and techniques. 
+
+\begin{enumerate} 
+\item 
+Dichotomies defined by long games. 
+Here the main problem is that determinacy is not given for free as in the case of countable games. 
+Up to now, one can only prove determinacy for specific games. 
+The hope is a general theory that allows you to prove determinacy of a large class of games. 
+\item 
+An example of the previous would be an analogue to the infinite-dimensinonal open hypergraph dichotomy of Miller, Carroy and Soukup. 
+In the countable case it implies the Hurewicz dichotomy, but this is not clear in the uncountable case. 
+\item 
+\todo{state version of $G_0^\kappa$-dichotomy} 
+The $G_0$-dichotomy and its variants can be used to derive a large number of important results in descriptive set theory. 
+It is open whether any analogue is possible in the uncountable setting. 
+
+\end{enumerate} 
+
+\fi 
 
 
 
 
 %%%%%%%%%%%%%%
-\section{List of open problems} 
+%\section{List of open problems} 
 
-\subsection{Connections with model theory} 
+
+
+
+%%%%%%%%%%
+\section{Generalized Baire Spaces} 
+
+%%%%%%%%%%
+\subsection{Claudio Agostini: Winning tactics}
+
+A \emph{tactic} in a game of length $\omega$ is a strategy that depends only on the previous move of the opponent. 
+For separable regular Hausdorff spaces, the following conditions are equivalent: 
+
+\begin{enumerate} 
+\item 
+There is a compatible complete metric. 
+\item 
+There is a winning tactic for II in the strong Choquet game. 
+\item 
+There is a winning strategy for II in the strong Choquet game. 
+\end{enumerate} 
+
+Notice that tactics do not make sense for longer games, since moves at limit times don't have a predecessor. 
+But one can define the following natural variant for 
+%\todo{literature reference to the strong Choquet game of length $\kappa$} 
+the strong Choquet game $G_\kappa(X)$ of length $\kappa$ for $X$. 
+A tactic for II in $G_\kappa(X)$ is defined as a strategy with the following properties: 
+
+\begin{enumerate} 
+\item 
+For successor times, the reply of II depends only on the preceding move. 
+\item 
+For a play of limit length consisting of $\vec{U}=\langle U_i\mid i<\alpha\rangle$ and $\vec{x}=\langle x_i\mid i<\alpha\rangle$, the reply of II depends only on $\bigcap_{i<\alpha} U_i$ and (possibly) $\alpha$. 
+\end{enumerate} 
 
 \begin{question} 
-
+Suppose that $X$ is a regular Hausdorff space of weight $\leq\kappa$. 
+Does the existence of a winning strategy for player II in $G_\kappa(X)$ imply the existence of a winning tactic? 
 \end{question} 
+
+
+
+%%%%%%%%%%
+\subsection{Dorottya Sziraki: The open colouring axiom}
+
+\newcommand{\OCA}{\mathsf{OCA}}
+\newcommand{\OGD}{\mathsf{OGD}}
+\newcommand{\PSP}{\mathsf{PSP}}
+
+The \emph{open colouring axiom} for $X$, $\OCA_\kappa(X)$, states that any open graph $G$ on $X$ either has a $\kappa$-coloring or else contains a complete subgraph of size $\kappa^+$. 
+$\OCA_\kappa$ states that $\OCA_\kappa(X)$ holds for all $X\subseteq {}^\kappa\kappa$. 
+
+\begin{question} 
+Is $\OCA_\kappa$ consistent with $\ZFC$? 
+\end{question} 
+
+The \emph{open graph dichotomy} $\OGD_\kappa(X)$ for $X$ states that any open graph on $X$ either has a $\kappa$-colouring or else contains a $\kappa$-perfect complete subgraph. 
+The \emph{perfect set property} $\PSP_\kappa(X)$ for $X\subseteq {}^\kappa\kappa$ states that $|X|\leq\kappa$ or $X$ has a $\kappa$-perfect subsets. 
+
+\begin{question} 
+Does $\PSP_\kappa(\mathrm{closed})$ imply $\OGD_\kappa(\mathrm{closed})$? 
+\end{question} 
+
+\begin{fact*} 
+$\OGD_\kappa(\mathrm{closed})$ $\Rightarrow$ $\OGD_\kappa(\Sigma^1_1(\kappa))$ $\Rightarrow$ $\PSP_\kappa(\Sigma^1_1(\kappa))$. 
+\end{fact*} 
+
+\begin{fact*} 
+After forcing with $\Col(\kappa,{<}\lambda)$, where $\lambda>\kappa$ is inaccessible, $\OGD_\kappa$ holds for all sets definable from $\kappa$-sequences of ordinals. 
+\end{fact*} 
+
+\begin{question} 
+Can we force $\PSP_\kappa$ with some forcing other than $\Col(\kappa,{<}\lambda)$? 
+\end{question} 
+
+
+
+
+%%%%%%%%%%
+\section{Connections with model theory} 
+
+%%%%%%%%%%
+\subsection{Jan Dobrowolski: Polish groups} 
+
+\newcommand{\id}{\mathrm{id}} 
+
+\begin{fact*} 
+Suppose that $X$ is Polish, $E$ is an equivalence relation on $X$ such that
+\begin{enumerate}
+\item 
+the equivalence class $[x]_E$ of any $x\in X$ is closed and 
+\item 
+the saturation $[U]_E$ of any open subset $U$ of $X$ is Borel. 
+\end{enumerate} 
+Then $X/E$, with the Effros Borel structure, is standard Borel, and the natural projection $\pi\colon X\rightarrow X/E$ has a Borel measurable right inverse $f$ with $\pi\circ f=\id$. 
+\end{fact*} 
+
+In particular, this holds for any Polish group $H$ and the equivalence relation on $H$ induced by a closed subgroup $G\leq H$. 
+
+\begin{question} 
+Does the analogue of the previous statement about Polish groups hold for $\kappa^\kappa$? 
+\end{question} 
+
+The product of two closed subgroups $G$, $H$ of $\mathrm{Sym}(\omega)$ is again closed. 
+
+\begin{question} 
+Does the analogue of the previous statement hold for $\mathrm{Sym}(\kappa)$ with the bounded topology? 
+\end{question} 
+
+
+%%%%%%%%%%
+\subsection{Rosario Mennuni: Omitting types} \ \\ 
+
+\noindent 
+{\bf Disclaimer:}
+The answer to this question might be easy or already known.
+
+\smallskip 
+The most basic version of the Omitting Type Theorem states:
+\begin{theorem*}
+  Let $T$ be a  consistent first-order theory in a countable language, $x=(x_0,\ldots,x_{n-1})$ an $n$-tuple of variables, and $\pi(x)$ a partial $n$-type over $\emptyset$ such that for no formula $\phi(x)$ consistent with $T$ we have $T\cup \set{\phi(x)}\vdash \pi(x)$. Then there is a countable  $M\models T$ such that no element of $M^n$ realises $\pi(x)$.
+\end{theorem*}
+
+A better version states (see~\cite[Theorem~10.3]{poizat}):
+
+\begin{theorem*}\label{thm:ott_meagre}
+  Let $T$ be a consistent first-order theory in a countable language, and for every $n\in \omega$ let $A_n$ be a meagre subset of the space $S_n(T)$ of $n$-types over $\emptyset$. Then there is a countable $M\models T$ such that, for every $n\in \omega$ and $p(x)\in A_n$, no element of $M^n$ realises $p(x)$.
+\end{theorem*}
+
+The basic version can be generalised to what is called the \emph{$\kappa$-omitting types theorem} (see~\cite[Theorem~2.2.19]{changkeisler}).
+
+\begin{theorem*}\label{thm:kappaott}
+  Let $T$ be a consistent first-order theory in a language of size $\kappa$, $x=(x_0,\ldots, x_{n-1})$ an $n$-tuple of variables, and $\pi(x)$ a  partial $n$-type over $\emptyset$ such that for no set of formulas $\Phi(x)$ of size $<\kappa$  consistent with $T$ we have $T\cup \Phi(x)\vdash \pi(x)$. Then there is $M\models T$ with $|M|\le \kappa$ and such that no element of $M^n$ realises $\pi(x)$.
+\end{theorem*}
+
+\begin{question}
+Let $L$ be a language of size $\kappa$, and let $T$ be a consistent $L$-theory.  Equip each $S_n(T)$ with the topology  generated by declaring partial types of size $<\kappa$ to induce open sets, and  replace ``meagre'' with ``$\kappa$-meagre''. For which cardinals $\kappa$ does Theorem~\ref{thm:kappaott} generalise in the fashion of Theorem~\ref{thm:ott_meagre}?
+\end{question}
+
+\begin{thebibliography}{0}
+  \bibitem{changkeisler}
+C.C.~\textsc{Chang}, H.J.~\textsc{Keisler}.
+\newblock \emph{Model Theory},
+\newblock Third edition, Studies in Logic and the Foundations of Mathematics 73. North-Holland Publishing Co., Amsterdam, (1990). 
+\bibitem{poizat}
+B.~\textsc{Poizat}.
+\newblock \emph{A Course in Model Theory}.
+\newblock Universitext. Springer (2000).
+\end{thebibliography}
+
+
+
+
+\newpage 
+
+%%%%%%%%%%
+\section{Combinatorics of $\kappa^\kappa$} 
+
+%%%%%%%%%%
+\subsection{Adrian Mathias, Vera Fischer} 
+
+\begin{question} 
+Do analogues to some classical results for mad families on $\omega$ hold for mad families on $\kappa$? 
+\end{question} 
+
+
+%%%%%%%%%%
+\subsection{Johannes Sch\"urz} 
+
+\begin{question} 
+Is there a forcing that adds a $\kappa$-dominating real, but no $\kappa$-Cohen real? 
+\end{question} 
+
+
+%%%%%%%%%%
+\subsection{Sarka Stejskalova} 
+
+%\todo{Define the ultrafilter number} 
+
+\begin{question} 
+Is $\mathfrak{u}_\kappa<2^\kappa$ consistent for the successor $\kappa$ of a regular cardinal? 
+\end{question} 
+
+%\begin{question} 
+%Is the tree property at $\aleph_2$ (provably) indestructible under Cohen forcing? 
+%\end{question} 
+
 
 
 
