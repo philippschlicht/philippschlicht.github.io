@@ -3,6 +3,10 @@
 
 @import "";
 
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+
 .site-header {
  background-color: red;
 }
