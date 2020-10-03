@@ -13,3 +13,10 @@
 .header_class {
   color: red;
 }
+
+.blog-tags {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.9375rem;
+  margin-bottom: 1.875rem;
+  margin: 1.875rem 0;
+}
