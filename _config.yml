@@ -1,7 +1,6 @@
 name: Philipp Schlicht
 remote_theme: niklasbuschmann/contrast@v2.8
-plugins:
-  - jekyll-remote-theme
+plugins: ['jekyll-remote-theme']
 color_scheme: light
 title: Philipp Schlicht
 description: [Research]
