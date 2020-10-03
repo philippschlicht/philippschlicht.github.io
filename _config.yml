@@ -1,5 +1,5 @@
 name: Philipp Schlicht
-theme: jekyll-theme-minima
+theme: minima
 title: Philipp Schlicht
 description: [Research]
 plugins: ['jekyll/scholar']
