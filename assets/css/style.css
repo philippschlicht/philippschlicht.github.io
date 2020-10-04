@@ -3,6 +3,9 @@
 
 @import "{{ site.theme }}";
 
+.my-definition
+  font-size: 1.2em
+  
 .serif {
   font-family: "Times New Roman", Times, serif;
 }
