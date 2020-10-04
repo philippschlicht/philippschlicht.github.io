@@ -2,34 +2,8 @@
 ---
 
 @import "{{ site.theme }}";
-
 .main-content {
   h2 {
    color: #ff0000;
  }
-}
-
-.my-definition
-  font-size: 1.2em
-
-.serif {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.site-header {
- background-color: red;
-}
-.site-title, .page-link {
- color: white !important;
-}
-
-.header_class {
-  color: red;
-}
-
-.blog-tags {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.9375rem;
-  margin-bottom: 1.875rem;
-  margin: 1.875rem 0;
 }
