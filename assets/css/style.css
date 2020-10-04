@@ -3,9 +3,15 @@
 
 @import "{{ site.theme }}";
 
+.main-content {
+  h1 {
+   color: #ff0000;
+ }
+}
+
 .my-definition
   font-size: 1.2em
-  
+
 .serif {
   font-family: "Times New Roman", Times, serif;
 }
