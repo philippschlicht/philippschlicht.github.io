@@ -2,11 +2,6 @@
 ---
 
 @import "{{ site.theme }}";
-.main-content {
-  h2 {
-   color: #ff0000;
- }
-}
 
 .site-header {
  background-color: blue;
@@ -16,6 +11,12 @@
 }
 
 /*
+.main-content {
+  h2 {
+   color: #ff0000;
+ }
+}
+
 .header_class {
   color: red;
 }
