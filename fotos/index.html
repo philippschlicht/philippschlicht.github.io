@@ -1,0 +1,22 @@
+---
+layout: default
+title: Conferences
+---
+
+<!--<body style="font-family:times new roman;">-->
+
+<h2>Fotos</h2>
+
+
+	<img src="/images/Fry-Building-Maths-Bristol-University_BMS5679.jpg" style="height: 140px;"/>
+
+	Me on the left, with my former colleague Dan Nielsen in Bristol.
+
+	<ul class="posts">
+
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
+
+	</body>
