@@ -1,0 +1,27 @@
+---
+layout: default
+title: Recent and upcoming talks
+---
+
+	<body>
+
+	<h2>{{ page.title }}</h2>
+
+	<ol>
+ 	<li> <a href="/files/CV_francais_26_Feb_2021.pdf">CV 26 February 2021</a></li>
+ 	<li> <a href="/files/CV_26_Feb_2021.pdf">CV francais 26 February 2021</a></li>
+	</ol>
+
+<!--
+	<img src="/images/Vienna 2018.jpg" style="height: 140px;"/>
+-->
+
+
+	<ul class="posts">
+
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
+
+	</body>
