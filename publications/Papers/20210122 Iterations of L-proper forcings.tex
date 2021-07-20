@@ -1,0 +1,542 @@
+\documentclass[a4paper, 11pt]{amsart}
+
+\setlength{\textwidth}{16cm}    %16
+\setlength\textheight{24.2cm}  %24.2
+\setlength\oddsidemargin{-0.2cm}
+\setlength\topmargin{-1cm}
+\setlength\footskip{1.5cm}
+
+\usepackage{amsmath,amsthm,amssymb,hyperref,mathrsfs}
+\usepackage{aliascnt}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{stmaryrd} 
+
+
+\usepackage[all,cmtip]{xy} 
+
+%\usepackage[backend=biber,style=numeric,autocite=footnote,sorting=none]{biblatex}
+
+\usepackage{dsfont}
+
+\usepackage%[scale=0.682]
+[a4paper, margin=1.4in]{geometry}
+
+\usepackage[textsize=footnotesize]{todonotes}
+\newcommand{\comment}[1]{\todo[fancyline]{#1}}
+
+\usepackage{xcolor}
+\definecolor{dblue}{rgb}{0,0,0.70}
+\hypersetup{
+	unicode=true,
+	colorlinks=true,
+	citecolor=dblue,
+	linkcolor=dblue,
+	anchorcolor=dblue
+}
+
+\makeatletter
+\expandafter\g@addto@macro\csname th@plain\endcsname{%
+		\thm@notefont{\bfseries}
+	}%
+\expandafter\g@addto@macro\csname th@remark\endcsname{%
+		\thm@headfont{\bfseries}
+	}%
+\makeatother
+
+%%%%%
+
+\newtheorem{theorem}{Theorem}[section]	
+\newtheorem*{theorem*}{Theorem}
+
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\aliascntresetthe{lemma}
+\newtheorem*{lemma*}{Lemma}
+
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+
+\newtheorem{subclaim}[theorem]{Subclaim}
+\newtheorem*{subclaim*}{Subclaim}
+
+\providecommand*{\theoremautorefname}{Theorem}
+\providecommand*{\propositionautorefname}{Proposition}
+\providecommand*{\lemmaautorefname}{Lemma}
+\providecommand*{\corollaryautorefname}{Corollary}
+\providecommand*{\remarkautorefname}{Remark}
+\providecommand*{\questionautorefname}{Question}
+
+\theoremstyle{remark}
+
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\newaliascnt{question}{theorem}
+\newtheorem{question}[question]{Question}
+\aliascntresetthe{question}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{conjecture}[question]{Conjecture} 
+
+\newtheorem{case}[theorem]{Case}
+\newtheorem*{case*}{Case}
+
+\newtheorem*{claim*}{Claim}
+
+\newtheorem{aim}[]{General Aim}
+\newtheorem{problem}[]{Problem}
+
+\providecommand*{\remarkautorefname}{Remark}
+\providecommand*{\questionautorefname}{Question}
+
+
+\newtheorem*{question*}{Question}
+
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\providecommand*{\definitionautorefname}{Definition}
+
+\newtheorem*{axiom}{Axiom}
+
+\newaliascnt{example}{theorem}
+\newtheorem{example}[example]{Example}
+\aliascntresetthe{example} 
+\providecommand*{\exampleautorefname}{Example}
+
+\renewcommand{\restriction}{\mathbin\upharpoonright}
+
+\newcommand{\axiomft}[1]{\mathsf{#1}} 
+\newcommand{\ZFC}{\axiomft{ZFC}}
+\newcommand{\AC}{\axiomft{AC}}
+\newcommand{\CH}{\axiomft{CH}}
+\newcommand{\AD}{\axiomft{AD}}
+\newcommand{\DC}{\axiomft{DC}}
+\newcommand{\ZF}{\axiomft{ZF}}
+\newcommand{\BPI}{\axiomft{BPI}}
+\newcommand{\Ord}{\mathrm{Ord}}
+\newcommand{\HOD}{\mathrm{HOD}}
+\newcommand{\GCH}{\axiomft{GCH}}
+\newcommand{\PFA}{\axiomft{PFA}}
+\newcommand{\NS}{\mathrm{NS}}
+\newcommand{\IS}{\axiomft{IS}}
+\newcommand{\HS}{\axiomft{HS}}
+\newcommand{\KWP}{\axiomft{KWP}}
+\newcommand{\SVC}{\axiomft{SVC}}
+\newcommand{\MA}{\axiomft{MA}}
+\newcommand{\GMA}{\axiomft{GMA}}
+\newcommand{\PID}{\mathsf{PID}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\KK}{\mathbb{K}}
+
+\newcommand{\cof}{\mathrm{cof}}
+
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\rng}{rng}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\sym}{sym}
+\DeclareMathOperator{\stem}{stem}
+\DeclareMathOperator{\fix}{fix}
+\DeclareMathOperator{\fin}{fin}
+%\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\aut}{Aut}
+%\DeclareMathOperator{\Col}{Col}
+%\DeclareMathOperator{\iCol}{Col_{inj}}
+\DeclareMathOperator{\Add}{Add}
+\DeclareMathOperator{\crit}{crit}
+\DeclareMathOperator{\Lim}{Lim}
+\DeclareMathOperator{\otp}{otp}
+\DeclareMathOperator{\tcl}{tcl}
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\Ult}{Ult}
+\newcommand{\sdiff}{\mathbin{\triangle}}
+\newcommand{\proves}{\mathrel{\vdash}}
+\newcommand{\forces}{\mathrel{\Vdash}}
+\newcommand{\nforces}{\mathrel{\not{\forces}}}
+\newcommand{\gaut}[1]{{\textstyle\int_{#1}}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\power}{\mathcal{P}}
+\newcommand{\E}{\mathrel{E}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\GG}{\mathbb G}
+\newcommand{\BB}{\mathbb B}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\sF}{\mathscr F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\sG}{\mathscr G}
+\newcommand{\sH}{\mathscr H}
+\newcommand{\rG}{\mathrm G}
+\newcommand{\bD}{\mathbf D}
+\newcommand{\fc}{\mathfrak c}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cQ}{\mathcal Q}
+%\newcommand{\1}{\mathds{1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+
+\newcommand{\jbd}{\mathcal J_{bd}}
+\newcommand{\da}{{\downarrow}}
+
+\newcommand{\tupp}[1]{\left\langle#1\right\rangle}
+\newcommand{\tup}[1]{\langle#1\rangle}
+\newcommand{\sett}[1]{\left\{#1\right\}}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\middd}{\mathrel{}\middle|\mathrel{}}
+\newcommand{\midd}{\mid}
+\newcommand{\Loo}{\mathcal{L}_{\omega_1,\omega}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\ran}{\mathrm{ran}}
+\newcommand{\PS}{\mathbb{P}_{\mathrm{side}}}
+\newcommand{\PSP}{\mathsf{PSP}}
+
+
+\newcommand{\FA}{\mathsf{FA}}
+\newcommand{\BFA}{\mathsf{BFA}}
+\newcommand{\NP}{\mathsf{N}}
+%{\mathsf{NP}}
+\newcommand{\club}{\mathsf{club}}
+\newcommand{\stat}{\mathsf{stat}}
+\newcommand{\ub}{\mathsf{ub}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\rspec}{\mathrm{rspec}}
+\newcommand{\bspec}{\mathrm{bspec}}
+\newcommand{\brspec}{\mathrm{brspec}}
+\newcommand{\rfo}{\mathrm{rfo}}
+\newcommand{\fo}{\mathrm{fo}}
+\newcommand{\bfo}{\mathrm{bfo}}
+\newcommand{\brfo}{\mathrm{brfo}}
+\newcommand{\sforces}{\Vdash^+} 
+
+\newcommand{\pow}{\mathcal{P}} 
+
+
+\DeclareMathOperator{\lub}{lub}
+%\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\const}{const_0}
+%\DeclareMathOperator{\ran}{ran}
+%\DeclareMathOperator{\Lim}{Lim}
+\DeclareMathOperator{\Card}{Card}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Def}{Def}
+\DeclareMathOperator{\rud}{rud}
+%\DeclareMathOperator{\id}{id}
+%\DeclareMathOperator{\cf}{cf}
+%\DeclareMathOperator{\FA}{FA}
+\DeclareMathOperator{\GN}{GN}
+%\DeclareMathOperator{\PFA}{PFA}
+
+
+\usepackage{enumitem}
+
+\newenvironment{enumerate-(a)}{\begin{enumerate}[label={\upshape (\alph*)}, leftmargin=2pc]}{\end{enumerate}}
+\newenvironment{enumerate-(1)}{\begin{enumerate}[label={\upshape (\arabic*)}, leftmargin=2pc]}{\end{enumerate}}
+\newenvironment{itemizenew}{\begin{itemize}[leftmargin=2pc]}{\end{itemize}}
+
+
+
+
+%%%%%%%%%% Start TeXmacs macros
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmstrong}[1]{\textbf{#1}}
+\newcommand{\tmtextit}[1]{{\itshape{#1}}}
+%%%%%%%%%% End TeXmacs macros
+
+
+\def\bu{$\bullet$}
+\def\bt{$\blacktriangle$}
+\def\vt{$\vartriangle$}
+\newcommand{\rb}[1]{\raisebox{-1.5ex}[0pt]{#1}}
+
+
+
+%%%%
+%\author{Philipp Schlicht}
+%\address[Philipp Schlicht]{School of Mathematics, 
+%University of Bristol, 
+%Fry Building.
+%Woodland Road, 
+%Bristol, BS8~1UG, UK}
+%\email[Philipp Schlicht]{philipp.schlicht@bristol.ac.uk}
+
+\date{\today}
+%\subjclass[2010]{Primary ; Secondary }
+%\keywords{}
+%\thanks{This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Sk\l odowska-Curie grant agreement No 794020 (IMIC) of the first author.}
+
+
+
+\title{Iteration of $L$-proper forcings} 
+%names} 
+
+\begin{document}
+%\begin{abstract} 
+%\end{abstract}
+
+\maketitle
+
+
+%\tableofcontents 
+
+
+%\begin{abstract} 
+%We consider a variant of properness ($L$-properness) with generic conditions over $L[x]$ for countable subsets $x$ of $\omega_1$. 
+%We observe an iteration theorem with the following special case for iterations of countable length: 
+%\emph{Suppose that $\PP_\alpha$ is a countable support iteration of $L$-proper forcings on the reals, definable from real parameters, of countable length, with $\PP_\alpha\in L[x]$ for some real $x$. 
+%Then for any $\PP$-generic filter $G$ over $V$, $G\cap L[x]$ is a $\PP_\alpha^{L[x]}$-generic filter over $L[x]$.}
+%This improves on a related result in [Judah-Shelah] in two ways: the proof here yields $G\cap L[x]$ instead of a translated filter and does not make definability assumptions on the iterands. 
+%\end{abstract} 
+
+
+%\section{Setting} 
+
+Any forcing $\PP$ stands for one definable from a real parameter and $\PP^M$ denotes the forcing in any set $M$ containing this real. 
+We call a forcing $\PP$ $L$-proper if it is proper with respect to all models $L[x]$ containing the parameter, where $x$ is a countable subsets of $\omega_1$.\footnote{This implies $\PP^{L[x]}\subseteq \PP$.} 
+%Given a collection $\cC$ of (class) models of $\ZFC^-$, we call a forcing $\PP$ \emph{$\cC$-proper} if for every $M\in \cC$ containing the parameter, there exists an $(M,\PP^M)$-generic condition below every $p\in \PP^M$. 
+%We further identify an inner model operator such as $L\colon x\mapsto L[x]$ for 
+%\todo{We seem to need this in the proof below } 
+%bounded subsets of $\omega_1$ with its range, so that $L$-properness is defined. 
+
+
+In the following, we assume that each iterand is a forcing on the reals, i.e. its domain is a subset of $\pow(\omega)$.\footnote{This is no restriction. If you prefer to work with the standard definition of a tree forcing, take $\pow(\omega^{<\omega})$ instead.} 
+Moreover, we assume that each iterand is defined from a real in the ground model 
+
+Let $p\sqsubseteq q$ denote that $p$ is an initial segment of $q$. 
+
+
+
+
+%\section{Iterations} 
+
+
+We call a $\PP$-name $\sigma$ \emph{almost nice} if it is of the form $\sigma=\{(\check{n},p)\mid p \in S_n\}$ for subsets $S_n$ of $\PP$. 
+If $\PP$ is an iterated forcing $\PP_\alpha$, we inductively define $\sigma$ to be \emph{hereditarily almost nice} if each $p\in S_n$ is hereditarily almost nice. 
+Since the set of hereditarily nice conditions is dense in $\PP_\alpha$, we will from now write $\PP_\alpha$ for this set. 
+We will assume every name for a real is almost nice. 
+% on denote by $\PP_\alpha$ the set of such conditions. 
+
+%Let 
+%\todo{$\delta$ for the length of the iteration?} 
+%$\hat{\PP}_\alpha$ denote the set of hereditarily almost nice $\PP_\alpha$-names. 
+%This is dense in $\PP_\alpha$. 
+
+Suppose that $\pi\colon \alpha\rightarrow S$ is an order isomorphism. 
+We define $\pi_*\colon \PP_\alpha\rightarrow V$ by adding blocks of $1$s in the gaps between $S$ in the hereditary support of a condition $p\in\PP_\alpha$. 
+More precisely, we define $\pi(p)$ for $p\in\PP_\alpha$ and $\pi(\sigma)$ for almost nice $\PP_\alpha$-names $\sigma$ by induction on $\alpha$: 
+$$\pi_*(p)(j)=   \begin{cases} \pi_*(p(i)) &\mbox{if } \pi(i)=j \\ 
+1 & \mbox{if } j\notin \ran(\pi) \end{cases}$$ 
+$$\pi_*(\sigma)=\{(\check{n},\pi_*(p))\mid (\check{n},p)\in \sigma\}).$$ 
+We will also use $\pi_*$ to denote $(\pi{\upharpoonright}\bar{\alpha})_*$ for $\bar{\alpha}<\alpha$. 
+
+If $\bar{M}$ is transitive and $\pi\colon \bar{M}\rightarrow M$ is an isomorphism with $\alpha=\Ord^{\bar{M}}$ and $S=\Ord^M\subseteq \Ord$, then  $(\pi{\upharpoonright}\alpha)_*=\pi{\upharpoonright}\PP_\alpha^{\bar{M}}$ by the definition of $(\pi{\upharpoonright}\alpha)_*$ via a trivial induction and elementarity of $\pi$. 
+
+Suppose that $\PP_\gamma$ is a countable support iteration of $L$-proper forcings on the reals. 
+Suppose that $S$ is a countable subset of $\gamma$ and $\pi\colon \alpha_S\rightarrow S$ is its uncollapse. 
+We will also write $\pi(\alpha_S)=\sup(S)$ to simplify the notation below. 
+
+%Given a condition $p\in \PP_\gamma$, we define $p{\upharpoonright}S$ by hereditarily setting all values $p(\alpha)=1$ for $\alpha\notin S$. 
+%Write $\bar{p}=\pi_*^{-1}(p{\upharpoonright}S)$ and $\bar{G}=\pi_*^{-1}[G]$ for subsets $G$ of $\PP_\gamma$. 
+
+One can assume that the domain of each iterand is $\pow(\omega)$. 
+In case you don't want to make this assumption, we will work with the upwards closure $\hat{G}$ for $\leq$ of a filter $G$ on $\PP_\gamma$. 
+Note that for $(p,\dot{q})\in G$, $(1,\dot{q})$ might not be in $G$ but is in $\hat{G}$. 
+
+%\todo{what for a sequence of names for forcings?} 
+Let $M=L[x]$ for a countable set $x$ of ordinals such that $L[x]$ contains the parameter of the iterands of $\PP_\alpha$. 
+
+The following defines $(M,\PP_{\alpha}^M)$-generic conditions in $\PP_\beta$ by translating the generic filter via $\pi_*^{-1}$. 
+For $\beta\leq\gamma$ write 
+%\todo{BETTER NOTATION: SUBscript * everywhere?} 
+$\beta^*=\sup(\pi^{-1}[\beta])$. 
+
+\begin{definition} 
+Suppose that $M$ is a transitive model of $\ZFC^-$ with $\alpha_S\in M$ and $\beta\leq \gamma$. 
+Call a condition $q\in \PP_\beta$ \emph{generic} if for every $\PP_\beta$-generic filter $G$ over $V$ with $q\in G$, $\pi_*^{-1}[\hat{G}]\cap \PP_{\beta^*}^M$ is a $\PP_{\beta^*}^M$-generic filter over $M$. 
+\end{definition} 
+
+%For any $\beta$, let $\alpha_\beta=\sup\{\alpha''+1\mid \alpha''<\alpha,\ \pi(\alpha'')<\beta\}$. 
+
+We fix some notation: 
+For $p\in \PP_\gamma$ and $\beta<\gamma$, let $p^\beta$ denote $p{\upharpoonright}[\beta,\gamma)$. 
+We can identify $p^\beta$ canonically with a $\PP_\beta$-name such that $p{\upharpoonright}\beta\Vdash_{\PP_\beta} p^\beta\in \PP_{[\beta,\gamma)}$. ($\PP_{[\beta,\gamma)}$ means an iteration whose indices start with $\beta$.) 
+Furthermore, if $A$ is a subset of $\PP_\gamma$ and $\{q{\upharpoonright}\beta\mid q\in A\}$ is a maximal antichain in $\PP_\beta$, then $p_A=\{(q^\beta,q{\upharpoonright}\beta)\mid q\in A\}$ is a $\PP_\beta$-name for an element of $\PP_{[\beta,\gamma)}$. 
+Let $N_{\beta,\gamma}$ denote the set of such names. 
+
+Let $\Gamma$ be a $\PP_\gamma$-name for the $\PP_\gamma$-generic filter, and $\Gamma^*$ a $\PP_\gamma$-name for $\pi_*^{-1}[\hat{\Gamma}]$. 
+%Recall that $S$ is a subset of $\gamma$ and $\pi\colon \alpha_S\rightarrow S$ is an order isomorphism. 
+
+\begin{lemma} 
+%Assume that $\omega_1$ is inaccessible to reals. 
+%\todo{add a tikz diagram of $\pi$, $\alpha$, $\beta$ etc. here} 
+Suppose that $\pi(\alpha)\geq\beta$, $q\in \PP_\beta$ is generic and $p\in N_{\beta^*,\alpha}^M$\footnote{This explicit notation is not strictly necessary; one could keep more closely to the usual proof of preservation of properness.} 
+% with 
+%\todo{Write $\bar{G}_{\beta^*}$ for $\pi_*^{-1}[\dot{G}]{\upharpoonright}\beta^*$?} 
+%$$q\Vdash_{\PP_\beta} p^{\pi_*^{-1}[\dot{G}]{\upharpoonright}\beta^*}\in \PP_{[\beta^*,\alpha)}.$$ 
+Then 
+%\todo{need here: $q\Vdash \pi_*(p){\upharpoonright}\beta$ is a condition} 
+%$q\leq \pi_*(p){\upharpoonright}\beta$, 
+there is a generic $r\sqsupseteq q$ in $\PP_{\pi(\alpha)}$ with 
+%$r{\upharpoonright}\beta=q$ and 
+$$q \Vdash_{\PP_\beta} (r^\beta)^{\Gamma{\upharpoonright}\beta} \leq \pi_*(p^{\Gamma^*{\upharpoonright}\beta^*}).$$ 
+
+%$p\in \pi_*[\PP_{\alpha_S}]M$ with $q\leq p{\upharpoonright}\alpha$, there is a generic $r\leq p$ in $\PP_\beta$ with $r{\upharpoonright}\alpha=q$. 
+%Let $\PP_\gamma$ be a countable support iteration of proper Suslin forcings. Let   be su ciently large and let M   (H  , 2, <) be countable, with P? 2 M. For every   2 ?\M, every q0 2 P  = P?   that is (M,P )-generic, and every p? 2 V P  such that (31.3) q0    p? 2 (P? \ M ) and p?   2 G?  there exists an (M,P?)-generic condition q 2 P? such that q   = q0 and
+\end{lemma} 
+\begin{proof} 
+The proof is a variant of preservation of properness. 
+We proceed by induction on $\alpha$. 
+Since the claim is vacuous for $\alpha=0$ or $\beta=\gamma$, we can assume that $0<\alpha\leq\alpha_S$ and $\beta<\gamma$. 
+
+
+
+\begin{case*} 
+$\alpha=\bar{\alpha}+1$. 
+\end{case*} 
+We will assume that $\pi(\bar{\alpha})\geq\beta$, since otherwise the extension of $q$ to $r\in \PP_{\pi(\alpha)}$ by $1$ is as required. 
+
+By the inductive hypothesis for $\bar{\alpha}$, we have a generic $\bar{r}\in\PP_{\pi(\bar{\alpha})}$ with $\bar{r}{\upharpoonright}\beta=q$ and 
+$$q \Vdash (\bar{r}^\beta)^{\Gamma{\upharpoonright}\beta} \leq \pi_*(p^{\Gamma^*{\upharpoonright}\beta^*}).$$ 
+Let $G$ be a $\PP_{\pi(\bar{\alpha})}$-generic filter over $V$ with $\bar{r}\in G$ and work in $V[G]$. 
+Since $r=\bar{r}$ is generic, 
+$G^*:=\pi_*^{-1}[\hat{G}]\cap \PP_{\bar{\alpha}}^M$ is a $\PP_{\bar{\alpha}}^M$-generic filter over $M$.
+%\todo{We need to assume here that $M=L[x]$, if we only want to assume $L$-properness. } 
+%\todo{Here we need to show inductively that ``$\omega_1$ is inaccessible to reals'' is preserved. we need it in $M[G^*]$} 
+%Since $\omega_1$ is inaccessible to reals in the ground model, it is inaccessible in $M[G^*]$. 
+Since $\dot{\PP}_{\pi(\bar{\alpha})}^G$ is $L$-proper in $V[G]$, there is an $(M[G^*],\PP^{M[G^*]})$-generic condition 
+$s\leq p(\bar{\alpha})^{G^*}$. 
+
+Back in  $V$, pick a $\PP_{\pi(\bar{\alpha})}$-name $\dot{s}$ such that $\bar{r}$ forces the above property of $s$.  
+Then extend $\bar{r}$ to $r\in \PP_{\pi(\alpha)}$ by letting $r(\pi(\bar{\alpha}))=\dot{s}$ and extending by $1$ above $\pi(\bar{\alpha})$. 
+
+This ensures that $r$ is generic. 
+In more detail, suppose that $G$ is $\PP_{\pi(\bar{\alpha})}$-generic  and $I=G{*}H$ is $\PP_{\pi(\alpha)}$-generic over $V$ with $r\in I$. 
+Since $\bar{r}\in G$, $G^*:=\pi_*^{-1}[\hat{G}]$ is a $\PP_{\bar{\alpha}}^M$-generic filter over $M$. 
+Let $\dot{t}$ denote $\PP_{\bar{\alpha}}$-names for elements of the forcing at $\bar{\alpha}$, then $\pi_*(\dot{t})^{G}= \dot{t}^{G^*}$ by the definition of $\pi_*$. 
+Since $r\in G{*}H$, we have $\dot{s}^G\in H$ and hence $H=\{\dot{t}^{G^*}\mid \pi_*(\dot{t})^G\in H\}$ is $\PP_{\bar{\alpha}}$-generic over $M[G^*]$. 
+So $\pi_*^{-1}[\hat{I}]=\{(p,\dot{t})\in \PP_\alpha\mid \pi_*(p)\in \hat{G},\ \pi_*(\dot{t})^G\in H\}$ is $\PP_\alpha$-generic over $M$.\footnote{Upwards closure of $\hat{I}$ is used since $(\pi_*(p),\pi_*(\dot{t}))$ might not be a condition. } 
+
+Moreover, $\dot{s}^G\leq p(\pi(\bar{\alpha}))$ by the definition of $\dot{s}$, as required. 
+%$I^*:=\pi_*^{-1}[I]$ is upwards closed since $H^*$ is, and the definition of $r$ yields that $H^*$ is $\PP_\alpha^M$-generic over $M$. 
+%Note that $\dot{s}^{\bar{G}}=\pi_*(\dot{s})^G$ and $p(\bar{\alpha})^{\bar{G}}=\pi_*(p)(\pi(\bar{\alpha}))$. 
+%Since $\dot{s}^{\bar{G}}\leq_{(\dot{\PP}_{\bar{\alpha}}^M)^{\bar{G}}} p(\bar{\alpha})^{\bar{G}}$, by absoluteness $\pi_*(\dot{s})^G\leq_{\dot{\PP}_{\pi(\bar{\alpha})}^G} \pi_*(p)(\pi(\bar{\alpha}))$. 
+%Hence this is forced by $\bar{r}$ and $r\leq \pi_*(p)$, as required. 
+
+\bigskip 
+
+\begin{case*} 
+$\alpha$ is a limit. 
+\end{case*} 
+
+We can assume that $\sup(\pi[\alpha])>\beta$, since otherwise the extension of $q$ to $r\in \PP_{\pi(\alpha)}$ by $1$ is as required. 
+Let $n_0$ be least with $\pi(\alpha_{n_0})>\beta$. 
+
+Genericity at limits works just like in the usual proof of preservation of properness. We still give details.  
+Suppose that $\alpha=\sup_{n\in\omega}\alpha_n$, where $\vec{\alpha}=\langle \alpha_n \mid n\in\omega\rangle$ is strictly increasing. 
+Let $\vec{D}=\langle D_n\mid n\in\omega\rangle$ enumerate all dense open subsets $D\in M$ of $\PP_\alpha^M$. 
+Assume each set appears infinitely often. 
+For each $n\in\omega$, there is some $p_{A_n}\in N_{\alpha_n,\alpha}^M$ with $A_n\in M$, $A_n\subseteq D_n$, by density of $D_n$. 
+Moreover, we can choose $A_{n+1}$ to refine $A_n$ in the sense that for all $p\in A_n$, there is a subset $S$ of $A_{n+1}\cap \{s\in \PP_\alpha^M\mid s\leq p\}$ such that $\{s{\upharpoonright}\alpha_{n+1} \mid p\in A_{n+1}\}$ is a maximal antichain below $p{\upharpoonright}\alpha_{n+1}$. 
+
+
+%$n\in\omega$, $\{p{\upharpoonright}\alpha_{n+1} \mid p\in A_{n+1}\}$ contains maximal antichains below $p{\upharpoonright}\alpha_{n+1}$ for each $p\in A_n$. 
+
+Let $r_{n_0}=q$. 
+We construct a $\sqsubseteq$-increasing sequence $\vec{r}=\langle r_n\mid n\geq n_0\rangle$ by applying the induction hypothesis successively to $r_n$, $\alpha_n$ and $p_{A_n}$ for $n\geq n_0$. 
+
+%We define $\vec{p}=\langle p_n\mid n\in\omega\rangle$ with $p_n\in D_n$ as follows. 
+%Let $p_0\in D_0$ be arbitrary. 
+%Suppose that $p_n$ is defined. 
+%Let $A_{n+1}\subseteq \{p\in D_{n+1}\mid p\leq p_n\}$ be such that $\{p{\upharpoonright}\alpha_n\mid p\in A_{n+1}\}$ is a maximal antichain below $p_n$. 
+
+%Let $p_{n+1}\leq p_n$ be the $\PP_{\alpha_n}$-name induced by $A_{n+1}$, 
+%\todo{improve notation} 
+%i.e. $p_{n+1}$ equals $p_n$ followed by the $\PP_{\alpha_n}$-name $\{(p{\upharpoonright}[\alpha_n,\alpha_{n+1}),p{\upharpoonright}\alpha_n)\mid p\in A_{n+1}\}$. 
+
+%We will construct: 
+
+%\begin{itemize} 
+%\item 
+%$p_n\in D_n$ 
+%\item 
+%$q_n\in \PP_{\pi(\alpha_n)}$ generic with $q_0\leq \pi_*(p_0{\upharpoonright}\alpha_0)$, 
+%$q_0$ forces that $q_1{\upharpoonright}[\alpha_0,\alpha_1)\leq \pi_*(p_1{\upharpoonright}[\alpha_0,\alpha_1))$, etc. 
+%$q_n \leq \pi_*(p_n){\upharpoonright}\pi(\alpha_n)$ and $q_n\supseteq q_i$ for all $i\leq n$. 
+%\end{itemize} 
+
+%In the end, we will let $q=\bigcup_{n\in\omega} q_n$. 
+
+%\todo[inline]{We aim to show: $q$ is as required. \\ 
+%Rewrite the next stuff: Fix $p_0$. 
+%Define $p_1$ my 'mixing' conditions in $D_1$ by considering a maximal antichain below $p_0{\upharpoonright}\alpha_0$. \\
+%Continue for $p_2$ etc. Argue that this works. } 
+
+%Let $p_0\in D_0$ be arbitrary. 
+
+%Find $q_0\in \PP_{\pi(\alpha_0)}$ with $q_0\leq \pi_*(p_0{\upharpoonright}\alpha_0)$ by the induction hypothesis for $\alpha=\alpha_0$ and $\beta=0$. 
+
+%Since $D_1$ is dense, and since $q_0$ is generic: for any $\PP_{\pi(\alpha_0)}$-generic filter $G$ over $V$ with $q_0\in G$, 
+%\todo{add argument} 
+%there is some $p_1\leq p_0$ in $D_1$ with $\pi_*(p_1{\upharpoonright}\alpha_0)\in G$. 
+%Pick one such $p_1$. 
+
+%The inductive hypothesis allows us to extend $q_0$ to some generic $q_1\in \PP_{\alpha_1}$ with $q_1{\upharpoonright}[\alpha_0,\alpha_1)\leq \pi_*(p_1{\upharpoonright}\alpha_1)$, etc. 
+
+Let $G^*=\pi_*^{-1}[\hat{G}]\cap \PP_\alpha^M$. 
+Note that $G^*$ is upwards closed by the upwards closure of $G^*{\upharpoonright}\alpha_n$ given by the inductive hypothesis. 
+%Suppose that $p\in \bar{G}$ and $p\leq q$. 
+%It suffices to show that $q{\upharpoonright}\alpha_n\in \bar{G}{\upharpoonright}\alpha_n$ for all $n\in\omega$. 
+%This holds since $p{\upharpoonright}\alpha_n\leq q{\upharpoonright}\alpha_n$, $p{\upharpoonright}\alpha_n\in \bar{G}{\upharpoonright}\alpha_n$ and each $\bar{G}{\upharpoonright}\alpha_n$ is upwards closed by the inductive hypothesis. 
+
+\begin{claim*} 
+$G^*$ is $\PP_\alpha^M$-generic over $M$. 
+\end{claim*} 
+\begin{proof} 
+%We claim that $G^*\cap D_n \neq \emptyset$ for all $n\in\omega$. 
+Since $r_n\in G{\upharpoonright}\pi(\alpha_n)$, $G^*{\upharpoonright}\alpha_n$ contains $p_n{\upharpoonright}\alpha_n$ for a unique $p_n\in A_n$, for each $n\in\omega$.  
+Since $A_n$ refines $A_m$ as above for $m< n$, we have $p_n\leq p_m$ for all $m\leq n$ and hence $p_m{\upharpoonright}\alpha_n\in G^*{\upharpoonright}\alpha_n$. 
+Thus $p_n\in G^*\cap D_n$ for all $n\in\omega$, as required. 
+\end{proof} 
+
+\begin{claim*} 
+$G^*$ is a filter. 
+\end{claim*} 
+\begin{proof} 
+Let $p\in\PP$. 
+We claim that the set $D_p$ of all $r\in \PP_\alpha$ with (a) $r\leq p$ or (b) $\exists n\in\omega\ (r{\upharpoonright}\alpha_n) \perp (p{\upharpoonright}\alpha_n)$ is open dense. 
+Towards a contradiction, suppose there is some $t\in \PP_\alpha$ with $s\notin D_p$ for all $s\leq t$.  
+Since (a) fails for all $r\leq t$, we have $t\perp p$. 
+Since (b) fails for $t$, there is some $s_0\leq (t{\upharpoonright}\alpha_0), (p{\upharpoonright}\alpha_0)$. 
+Since $t\perp p$, $s_0$ forces that the tails of $t$ and $p$ are incompatible. 
+Repeat this step above $s_0$ to obtain a $\sqsubseteq$-increasing sequence $\langle s_n\mid n\in\omega\rangle$ with union $s\leq t,p$. 
+This contradicts $t\perp p$. 
+
+Now take any $p,q \in G^*$. 
+Since $D_p$ and $D_q$ are dense, there is some $r\in G^*\cap D_p\cap D_q$. 
+Since (b) fails for all $r\in G^*$, we have $r\leq p,q$, as required. 
+\end{proof} 
+
+\end{proof} 
+
+
+
+
+
+
+\end{document}
