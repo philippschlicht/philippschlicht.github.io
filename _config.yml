@@ -1,6 +1,6 @@
 name: Philipp Schlicht
-theme: jekyll-theme-minima
-color_scheme: dark
+theme: jekyll-theme-slate
+color_scheme: light
 title: Philipp Schlicht
 description: [Research]
 plugins: ['jekyll/scholar']
