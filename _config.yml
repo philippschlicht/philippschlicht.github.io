@@ -1,7 +1,7 @@
 name: Philipp Schlicht
-title: null
+
 
 color_scheme: dark
-
+title: null
 description: [Research]
 plugins: ['jekyll/scholar']
