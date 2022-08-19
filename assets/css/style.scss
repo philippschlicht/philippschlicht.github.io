@@ -12,7 +12,7 @@ $code-text-color: #494D4E;
 @import "{{ site.theme }}";
 .site-header {
  background-color: red;
- font: times; 
+ font-style: times; 
 }
 .site-title, .page-link {
  color: white !important;
