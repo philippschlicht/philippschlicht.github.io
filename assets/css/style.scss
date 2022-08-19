@@ -12,12 +12,14 @@ $code-text-color: #494D4E;
 @import "{{ site.theme }}";
 .site-header {
  background-color: red;
- font-style: times; 
 }
 .site-title, .page-link {
  color: white !important;
 }
 
+.main-content {
+  font-family: times; 
+}
 
 /*
 .main-content {
