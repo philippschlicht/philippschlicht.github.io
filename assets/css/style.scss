@@ -11,15 +11,20 @@ $code-text-color: #494D4E;
 
 
 
+/* $base-font-size:   32px; */ 
+
 @import "{{ site.theme }}";
+
+html {
+    font-size: 14px;
+}
+
 .site-header {
  background-color: red;
 }
 .site-title, .page-link {
  color: white !important;
 }
-
-$base-font-size:   32px;
 
 .page-header {
  font-family: "Times New Roman", Times, serif;
