@@ -1,7 +1,7 @@
 ---
 ---
 
-$header-bg-color: #cee1f5; 
+$header-bg-color: #cee1f5;
 /* #1e6bb8; */
 $header-bg-color-secondary: #cee1f5;
 /* #7EA7D3; */
@@ -15,7 +15,7 @@ $code-text-color: #494D4E;
 
 /* $base-font-size:   32px; */
 
-@import "{{ site.theme }}";
+/* @import "{{ site.theme }}"; */ 
 
 html {
     font-size: 32px;
