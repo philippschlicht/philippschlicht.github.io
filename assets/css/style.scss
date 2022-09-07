@@ -9,7 +9,7 @@ $blockquote-text-color: #819198;
 
 $code-text-color: #494D4E;
 
-$base-font-size:   32px;
+
 
 @import "{{ site.theme }}";
 .site-header {
@@ -19,6 +19,7 @@ $base-font-size:   32px;
  color: white !important;
 }
 
+$base-font-size:   32px;
 
 .page-header {
  font-family: "Times New Roman", Times, serif;
