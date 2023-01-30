@@ -1,6 +1,6 @@
 name: Philipp Schlicht
 theme: jekyll-theme-cayman
-
-title: Philipp Schlicht
+color_scheme: light
+title: [Philipp Schlicht]
 description: [Research]
 plugins: ['jekyll/scholar']
