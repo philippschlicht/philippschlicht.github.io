@@ -3,7 +3,7 @@ layout: home
 title: "Home"
 ---
 
-I currently work on the EPSRC project ''Graphs on generalised Baire spaces'' with <a href="https://people.maths.bris.ac.uk/~mapdw/">Prof. Philip Welch</a> at the University of Bristol.
+I work on the EPSRC project ''Graphs on generalised Baire spaces'' with <a href="https://people.maths.bris.ac.uk/~mapdw/">Prof. Philip Welch</a> at the University of Bristol.
 <!--The project aims to understand the structure of large graphs that satisfy topological conditions.-->
 In which circumstances can you colour a graph with few colours such that no adjacent vertices are assigned the same colour?
 We study this problem in the context of graphs on the reals of a specified complexity such as open, closed or Borel as a subset of the plane.
