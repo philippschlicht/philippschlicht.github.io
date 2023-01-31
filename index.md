@@ -9,6 +9,6 @@ In which circumstances can you colour a graph with few colours such that no adja
 We study this problem in the context of graphs on the reals of a specified complexity such as open, closed or Borel as a subset of the plane.
 The study of such graphs led Todorcevic to devise the so-called open colouring axiom.
 We aim to understand graphs and hypergraphs of finite and infinite dimension on large spaces.
-These spaces appear naturally in set theory and model theory. 
+These spaces appear naturally in set theory and model theory.
 
 <!--This belong to a field with exciting connections with infinite combinatorics and large cardinals and applications to descriptive set theory and classification problems.-->
