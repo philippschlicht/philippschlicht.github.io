@@ -1,0 +1,593 @@
+\documentclass{amsart}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amssymb, latexsym}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{url}
+\usepackage{verbatim}
+
+\usepackage{hyperref}
+
+\usepackage[textsize=footnotesize]{todonotes}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{sublemma}{Lemma}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{subclaim}{Claim}[sublemma]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newtheorem*{main}{Main~Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Key~Assumption}
+\newtheorem{question}[theorem]{Question}
+
+
+
+\newcommand{\concat}{%
+  \mathord{
+    \mathchoice
+    {\raisebox{1ex}{\scalebox{.7}{$\frown$}}}
+    {\raisebox{1ex}{\scalebox{.7}{$\frown$}}}
+    {\raisebox{.7ex}{\scalebox{.5}{$\frown$}}}
+    {\raisebox{.7ex}{\scalebox{.5}{$\frown$}}}
+  }
+}
+\newcommand{\Coll}{\mathop{\rm Coll}}
+\newcommand{\Ult}{\mathop{\rm Ult}}
+\newcommand{\image}{\mathbin{\hbox{\tt\char'42}}}
+\newcommand{\plus}{{+}}
+\newcommand{\Mbar}{{\overline{M}}}
+\newcommand{\Nbar}{{\overline{N}}}
+\newcommand{\Union}{\bigcup}
+\newcommand{\union}{\cup}
+\newcommand{\of}{\subseteq}
+\newcommand{\lt}[1]{{\smalllt}#1}
+\newcommand{\lesseq}[1]{{\smallleq}#1}
+\newcommand{\smallleq}{\mathrel{\mathchoice{\raise2pt\hbox{$\scriptstyle\leq$}}{\raise1pt\hbox{$\scriptstyle\leq$}}{\raise1pt\hbox{$\scriptscriptstyle\leq$}}{\scriptscriptstyle\leq}}}
+\newcommand{\smalllt}{\mathrel{\mathchoice{\raise2pt\hbox{$\scriptstyle<$}}{\raise1pt\hbox{$\scriptstyle<$}}{\raise0pt\hbox{$\scriptscriptstyle<$}}{\scriptscriptstyle<}}}
+\newcommand{\Add}{\mathop{\rm Add}}
+\newcommand{\ltkappa}{{{\smalllt}\kappa}}
+\newcommand{\leqkappa}{{{\smallleq}\kappa}}
+\newcommand{\GCH}{\mathsf{GCH}}
+\newcommand{\ORD}{\mathop{{\rm ORD}}}
+\newcommand{\ZFC}{\mathsf{ZFC}}
+\newcommand{\Levy}{L{\'e}vy}
+\newcommand{\one}{\mathop{1\hskip-2.5pt {\rm l}}}
+\newcommand{\z}{\tiny}
+\newcommand{\x}{\mathfrak{X}}
+\newcommand{\y}{\mathfrak{Y}}
+\newcommand{\oc}{\mathcal{O}}
+\newcommand{\M}{\mathfrak{M}}
+\newcommand{\n}{\mathbb {N}}
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\q}{\mathbb{Q}}
+\newcommand{\f}{\mathbb{F}}
+\newcommand{\s}{\mathbb{S}}
+\newcommand{\fin}{\mathrm{Fin}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\sa}{\mathcal A}
+\newcommand{\arr}[1]{\overset{\to}{#1}}
+\newcommand{\ahat}[2]{\overset{\thicksim}{\mathcal A_{#1}^{#2}}}
+\newcommand{\ah}[2]{\mathcal A_{#1}^{#2}}
+\newcommand{\her}[1]{H_{{#1}^+}}
+\newcommand{\map}[3]{f_{#1#2}^{#3}}
+\newcommand{\ahh}[1]{\mathcal A_{#1}}
+\newcommand{\ma}[2]{f_{#1#2}}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\adot}{\Dot A}
+\newcommand{\lset}[1]{\langle L_{#1}[A],A\rangle}
+\newcommand{\lsetex}[1]{\langle L_{#1}[A],A,\xi\rangle}
+\newcommand{\lone}[1]{L_{#1}[A]}
+\newcommand{\tail}{\text{tail}}
+\newcommand{\Power}{\mathcal P}
+\newcommand{\lan}{\mathcal L}
+\newcommand{\str}{\mathcal A}
+\newcommand{\forces}{\Vdash}
+\newcommand{\ptail}{{\dot{\p}_\tail}}
+\newcommand{\Los}{\L o\'s}
+\newcommand{\Godel}{G\"{o}del}
+\newcommand{\margin}[1]{\marginpar{\tiny #1}}
+\newcommand{\restrict}{\upharpoonright}
+\newcommand{\GBC}{\mathsf{GBC}}
+\newcommand{\PA}{\mathsf{PA}}
+\newcommand{\KM}{\mathsf{KM}}
+\newcommand{\Split}{\rm Split}
+\newcommand{\Cod}{\rm Cod}
+\newcommand{\Jonsson}{J{\'o}nsson}
+\newcommand{\almostsub}{\subseteq_*}
+\newcommand{\from}{\mathbin{\vbox{\baselineskip=2pt\lineskiplimit=0pt
+                          \hbox{.}\hbox{.}\hbox{.}}}}
+\newcommand{\X}{\mathfrak{X}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\seq}[1]{\langle#1\rangle}
+\newcommand{\set}[1]{\lbrace#1\rbrace}
+\newcommand{\LF}{\mathbb{P}}
+\newcommand{\ex}[1]{{}^{#1}}
+\newcommand{\HOD}{{\rm HOD}}
+\newcommand{\ZF}{\mathsf{ZF}}
+\newcommand{\EL}{{\rm EL}}
+\newcommand{\LM}{{\rm LM}}
+\newcommand{\crit}{\text{crit}}
+\newcommand{\proves}{\vdash}
+\newcommand{\VP}{\rm VP}
+\newcommand{\gVP}{\rm gVP}
+\newcommand{\bSigma}{\mathbf\Sigma}
+\newcommand{\bPi}{\mathbf\Pi}
+\newcommand{\ran}{{\rm ran}}
+\newcommand{\Vopenka}{Vop\v{e}nka}
+\newcommand{\SSy}{{\rm SSy}}
+\newcommand{\dom}{\text{dom}}
+\newcommand{\Z}{\mathsf{Z}}
+\newcommand{\AC}{\mathsf{AC}}
+\newcommand{\DC}{\mathsf{DC}}
+\newcommand{\ETR}{\mathsf{ETR}}
+\newcommand{\B}{\mathbb B}
+\newcommand{\C}{\mathcal C}
+\newcommand{\V}{\mathscr V}
+\newcommand{\CC}{{\rm CC}}
+\newcommand{\Card}{{\rm Card}}
+
+
+\newcommand{\G}{\mathcal G}
+\newcommand{\ult}{\mathrm{ult}} 
+\newcommand{\Col}{\mathrm{Col}} 
+
+\title{Open problems on generalised Baire spaces 2020}
+\begin{document}
+\maketitle
+
+%\begin{abstract} 
+The \emph{Fifth Workshop on Generalised Baire Spaces} took place at the School of Mathematics of the University of Bristol on 3-4 February, 2020, see \url{<https://philippschlicht.github.io/meetings/generalizedbairespaces2020>}. 
+This is an incomplete list of some open problems that were discussed at the workshop. 
+%We include a (probably incomplete) list of solved problems from the 2016 problem list. 
+\footnote{%Collected by Philipp Schlicht. 
+If you have an answer, comment or further question, please email Philipp Schlicht at \href{mailto:philipp.schlicht@bristol.ac.uk} {philipp.schlicht@bristol.ac.uk}.} 
+%\end{abstract} 
+
+
+%%%%%%%%%%%%%%
+%\section{Solutions to the 2016 problem list} 
+
+
+
+
+\iffalse 
+%%%%%%%%%%%%%%
+\section{Current directions} 
+
+
+%%%%%%%%%%%%%%
+\subsection{Philipp Schlicht: Dichotomies} 
+
+\todo[inline]{Rewrite} 
+
+A dichotomy states that an object is either small or large in a prescribed sense. 
+Various fundamental results in descriptive set theory take this form. 
+The simplest example is the perfect set property: the set is required to be either countable or contain a perfect subsets. 
+
+Finding the right dichotomies is therefore important to develop a theory of generalised Baire spaces. 
+
+One aim is to generalise classical and new dichotomies to generalised Baire spaces and find boundaries of possible generalisations. 
+
+Other results are about colourings of graphs. 
+For instance, many results in descriptive set theory have been reproved in recent years as consequences of new dichotomy theorems for graphs in work of Ben Miller and others. 
+
+Various fundamental problems appear in the uncountable setting. 
+
+\begin{enumerate} 
+\item 
+No general determinacy results, while you get determinacy for games of length $\omega$ for free. 
+\item 
+Difficulties with forcings adding subsets of $\kappa$ instead of subsets of $\omega$. 
+\end{enumerate} 
+
+They can often be overcome by finding the right notions and techniques. 
+
+\begin{enumerate} 
+\item 
+Dichotomies defined by long games. 
+Here the main problem is that determinacy is not given for free as in the case of countable games. 
+Up to now, one can only prove determinacy for specific games. 
+The hope is a general theory that allows you to prove determinacy of a large class of games. 
+\item 
+An example of the previous would be an analogue to the infinite-dimensinonal open hypergraph dichotomy of Miller, Carroy and Soukup. 
+In the countable case it implies the Hurewicz dichotomy, but this is not clear in the uncountable case. 
+\item 
+\todo{state version of $G_0^\kappa$-dichotomy} 
+The $G_0$-dichotomy and its variants can be used to derive a large number of important results in descriptive set theory. 
+It is open whether any analogue is possible in the uncountable setting. 
+
+\end{enumerate} 
+
+\fi 
+
+
+
+
+%%%%%%%%%%%%%%
+%\section{List of open problems} 
+
+
+
+
+%%%%%%%%%%
+\section{Generalized Baire Spaces} 
+
+%%%%%%%%%%
+\subsection{Claudio Agostini: Winning tactics}
+
+A \emph{tactic} in a game of length $\omega$ is a strategy that depends only on the previous move of the opponent. 
+For separable regular Hausdorff spaces, the following conditions are equivalent: 
+
+\begin{enumerate} 
+\item 
+There is a compatible complete metric. 
+\item 
+There is a winning tactic for II in the strong Choquet game. 
+\item 
+There is a winning strategy for II in the strong Choquet game. 
+\end{enumerate} 
+
+Notice that tactics do not make sense for longer games, since moves at limit times don't have a predecessor. 
+But one can define the following natural variant for 
+%\todo{literature reference to the strong Choquet game of length $\kappa$} 
+the strong Choquet game $G_\kappa(X)$ of length $\kappa$ for $X$. 
+A tactic for II in $G_\kappa(X)$ is defined as a strategy with the following properties: 
+
+\begin{enumerate} 
+\item 
+For successor times, the reply of II depends only on the preceding move. 
+\item 
+For a play of limit length consisting of $\vec{U}=\langle U_i\mid i<\alpha\rangle$ and $\vec{x}=\langle x_i\mid i<\alpha\rangle$, the reply of II depends only on $\bigcap_{i<\alpha} U_i$ and (possibly) $\alpha$. 
+\end{enumerate} 
+
+\begin{question} 
+Suppose that $X$ is a regular Hausdorff space of weight $\leq\kappa$. 
+Does the existence of a winning strategy for player II in $G_\kappa(X)$ imply the existence of a winning tactic? 
+\end{question} 
+
+
+
+%%%%%%%%%%
+\subsection{Dorottya Sziraki: The open colouring axiom}
+
+\newcommand{\OCA}{\mathsf{OCA}}
+\newcommand{\OGD}{\mathsf{OGD}}
+\newcommand{\PSP}{\mathsf{PSP}}
+
+The \emph{open colouring axiom} for $X$, $\OCA_\kappa(X)$, states that any open graph $G$ on $X$ either has a $\kappa$-coloring or else contains a complete subgraph of size $\kappa^+$. 
+$\OCA_\kappa$ states that $\OCA_\kappa(X)$ holds for all $X\subseteq {}^\kappa\kappa$. 
+
+\begin{question} 
+Is $\OCA_\kappa$ consistent with $\ZFC$? 
+\end{question} 
+
+The \emph{open graph dichotomy} $\OGD_\kappa(X)$ for $X$ states that any open graph on $X$ either has a $\kappa$-colouring or else contains a $\kappa$-perfect complete subgraph. 
+The \emph{perfect set property} $\PSP_\kappa(X)$ for $X\subseteq {}^\kappa\kappa$ states that $|X|\leq\kappa$ or $X$ has a $\kappa$-perfect subsets. 
+
+\begin{question} 
+Does $\PSP_\kappa(\mathrm{closed})$ imply $\OGD_\kappa(\mathrm{closed})$? 
+\end{question} 
+
+\begin{fact*} 
+$\OGD_\kappa(\mathrm{closed})$ $\Rightarrow$ $\OGD_\kappa(\Sigma^1_1(\kappa))$ $\Rightarrow$ $\PSP_\kappa(\Sigma^1_1(\kappa))$. 
+\end{fact*} 
+
+\begin{fact*} 
+After forcing with $\Col(\kappa,{<}\lambda)$, where $\lambda>\kappa$ is inaccessible, $\OGD_\kappa$ holds for all sets definable from $\kappa$-sequences of ordinals. 
+\end{fact*} 
+
+\begin{question} 
+Can we force $\PSP_\kappa$ with some forcing other than $\Col(\kappa,{<}\lambda)$? 
+\end{question} 
+
+
+
+
+%%%%%%%%%%
+\section{Connections with model theory} 
+
+%%%%%%%%%%
+\subsection{Jan Dobrowolski: Polish groups} 
+
+\newcommand{\id}{\mathrm{id}} 
+
+\begin{fact*} 
+Suppose that $X$ is Polish, $E$ is an equivalence relation on $X$ such that
+\begin{enumerate}
+\item 
+the equivalence class $[x]_E$ of any $x\in X$ is closed and 
+\item 
+the saturation $[U]_E$ of any open subset $U$ of $X$ is Borel. 
+\end{enumerate} 
+Then $X/E$, with the Effros Borel structure, is standard Borel, and the natural projection $\pi\colon X\rightarrow X/E$ has a Borel measurable right inverse $f$ with $\pi\circ f=\id$. 
+\end{fact*} 
+
+In particular, this holds for any Polish group $H$ and the equivalence relation on $H$ induced by a closed subgroup $G\leq H$. 
+
+\begin{question} 
+Does the analogue of the previous statement about Polish groups hold for $\kappa^\kappa$? 
+\end{question} 
+
+The product of two closed subgroups $G$, $H$ of $\mathrm{Sym}(\omega)$ has the property of Baire. 
+
+\begin{question} 
+Does the analogue of the previous statement hold for $\mathrm{Sym}(\kappa)$ with the bounded topology? 
+\end{question} 
+
+
+%%%%%%%%%%
+\subsection{Rosario Mennuni: Omitting types} \ \\ 
+
+\noindent 
+{\bf Disclaimer:}
+The answer to this question might be easy or already known.
+
+\smallskip 
+The most basic version of the Omitting Type Theorem states:
+\begin{theorem*}
+  Let $T$ be a  consistent first-order theory in a countable language, $x=(x_0,\ldots,x_{n-1})$ an $n$-tuple of variables, and $\pi(x)$ a partial $n$-type over $\emptyset$ such that for no formula $\phi(x)$ consistent with $T$ we have $T\cup \set{\phi(x)}\vdash \pi(x)$. Then there is a countable  $M\models T$ such that no element of $M^n$ realises $\pi(x)$.
+\end{theorem*}
+
+A better version states (see~\cite[Theorem~10.3]{poizat}):
+
+\begin{theorem*}\label{thm:ott_meagre}
+  Let $T$ be a consistent first-order theory in a countable language, and for every $n\in \omega$ let $A_n$ be a meagre subset of the space $S_n(T)$ of $n$-types over $\emptyset$. Then there is a countable $M\models T$ such that, for every $n\in \omega$ and $p(x)\in A_n$, no element of $M^n$ realises $p(x)$.
+\end{theorem*}
+
+The basic version can be generalised to what is called the \emph{$\kappa$-omitting types theorem} (see~\cite[Theorem~2.2.19]{changkeisler}).
+
+\begin{theorem*}\label{thm:kappaott}
+  Let $T$ be a consistent first-order theory in a language of size $\kappa$, $x=(x_0,\ldots, x_{n-1})$ an $n$-tuple of variables, and $\pi(x)$ a  partial $n$-type over $\emptyset$ such that for no set of formulas $\Phi(x)$ of size $<\kappa$  consistent with $T$ we have $T\cup \Phi(x)\vdash \pi(x)$. Then there is $M\models T$ with $|M|\le \kappa$ and such that no element of $M^n$ realises $\pi(x)$.
+\end{theorem*}
+
+\begin{question}
+Let $L$ be a language of size $\kappa$, and let $T$ be a consistent $L$-theory.  Equip each $S_n(T)$ with the topology  generated by declaring partial types of size $<\kappa$ to induce open sets, and  replace ``meagre'' with ``$\kappa$-meagre''. For which cardinals $\kappa$ does Theorem~\ref{thm:kappaott} generalise in the fashion of Theorem~\ref{thm:ott_meagre}?
+\end{question}
+
+\begin{thebibliography}{0}
+  \bibitem{changkeisler}
+C.C.~\textsc{Chang}, H.J.~\textsc{Keisler}.
+\newblock \emph{Model Theory},
+\newblock Third edition, Studies in Logic and the Foundations of Mathematics 73. North-Holland Publishing Co., Amsterdam, (1990). 
+\bibitem{poizat}
+B.~\textsc{Poizat}.
+\newblock \emph{A Course in Model Theory}.
+\newblock Universitext. Springer (2000).
+\end{thebibliography}
+
+
+
+
+\newpage 
+
+%%%%%%%%%%
+\section{Combinatorics of $\kappa^\kappa$} 
+
+%%%%%%%%%%
+\subsection{Adrian Mathias, Vera Fischer} 
+
+\begin{question} 
+Do analogues to some classical results for mad families on $\omega$ hold for mad families on $\kappa$? 
+\end{question} 
+
+
+%%%%%%%%%%
+\subsection{Johannes Sch\"urz} 
+
+\begin{question} 
+Is there a forcing that adds a $\kappa$-dominating real, but no $\kappa$-Cohen real? 
+\end{question} 
+
+
+%%%%%%%%%%
+\subsection{Sarka Stejskalova} 
+
+%\todo{Define the ultrafilter number} 
+
+\begin{question} 
+Is $\mathfrak{u}_\kappa<2^\kappa$ consistent for the successor $\kappa$ of a regular cardinal? 
+\end{question} 
+
+%\begin{question} 
+%Is the tree property at $\aleph_2$ (provably) indestructible under Cohen forcing? 
+%\end{question} 
+
+
+
+
+
+
+\iffalse 
+\newpage 
+\section{Victoria Gitman: Second-order set theory}
+
+Classes, from class forcing notions to elementary embeddings of the universe to inner models, play a fundamental role in modern set theory. But within first-order set theory we are limited to studying only definable classes and we cannot even express properties that necessitate quantifying over classes. 
+
+Second-order set theory is a formal framework in which a model consists both of a collection of sets and a collection of classes (which are themselves collections of sets). In second-order set theory, we can study classes such as truth predicates, which can never be definable over a model of $\ZFC$, and properties that, for instance, quantify over all inner models. With this formal background we can develop a theory of class forcing that explains why and when class forcing behaves differently from set forcing. 
+
+%In this talk, I will discuss a hierarchy of second-order set theories, starting from the weak G\"odel-Bernays set theory $\GBC$ and going beyond the relatively strong Kelley-Morse theory $\KM$. I will give an overview of a
+
+A number of interesting second-order set theoretic principles arose out of recent work in this area, such as, class choice principles, transfinite recursion with classes, determinacy of games on the ordinals, and the class Fodor Principle. The study of where these principles fit in the hierarchy of second-order set theories --- starting from the weak G\"odel-Bernays set theory $\GBC$ and going beyond the relatively strong Kelley-Morse theory $\KM$ --- serves as the beginning of a reverse mathematics program that I encourage set theorists to take part in.
+
+\begin{question}
+Does \Godel-Bernays set theory $\GBC$ prove that any two meta-ordinals are comparable?
+\end{question}
+The current best upper bound is $\GBC+\ETR$.
+\begin{question}
+Does tame forcing preserve elementary transfinite recursion $\ETR$?
+\end{question}
+Hamkins and Woodin showed that tame forcing preserves open class determinacy, a principle slighly strengthening $\ETR$, which is implied by $\Sigma^1_1$-comprehension. 
+\begin{question}
+Can tame forcing add meta-ordinals? 
+\end{question}
+Tame forcing cannot add meta-ordinals to a model of $\GBC+\Sigma^1_1$-comprehension by a result of Hamkins and Woodin, so the question is only about weak theories.
+\begin{question}
+Can the Class Fodor Principle hold in a model of $\ZFC$ with definable classes? 
+\end{question}
+\begin{question}
+Is the Class Fodor Principle preserved by tame forcing?
+\end{question}
+
+%\nocite{*} 
+%\bibliographystyle{alpha}
+%\bibliography{references-dan,references-victoria}
+
+\begin{thebibliography}{SNW19}
+
+\bibitem[GH17]{MR3656309}
+Victoria Gitman and Joel~David Hamkins.
+\newblock Open determinacy for class games.
+\newblock In {\em Foundations of mathematics}, volume 690 of {\em Contemp.
+  Math.}, pages 121--143. Amer. Math. Soc., Providence, RI, 2017.
+
+\bibitem[GHK]{Gitman2}
+Victoria Gitman, Joel~David Hamkins, and Asaf Karagila.
+\newblock Kelley-{M}orse set theory does not prove the class {F}odor theorem.
+\newblock Submitted.
+
+\bibitem[HGH+]{Gitman1}
+Peter Holy, Victoria Gitman, Joel~David Hamkins, Philipp Schlicht, and Kameryn
+  Williams.
+\newblock The exact strength of the class forcing theorem.
+\newblock Submitted.
+
+\bibitem[HW]{Hamkins}
+Joel~David Hamkins and William~Hugh Woodin.
+\newblock Open class determinacy is preserved by forcing.
+\newblock Submitted.
+
+\end{thebibliography}
+
+
+
+\section{Dan Nielsen: Level-by-level virtual large cardinals}
+
+The study of generic large cardinals goes back a long way, at least back to the 70's. Back then it seems that the primary interest was the existence of \textit{precipitous} and \textit{saturated} ideals on small cardinals like $\omega_1$ and $\omega_2$. This moved to more general generic embeddings, both defined on $V$ but also on rank-initial segments of $V$ --- these were investigated by e.g. Donder and Levinsky (1989) and Ferber and Gitik (2010).
+
+The move to \textit{virtual} large cardinals was probably with the \textit{remarkable cardinals}, introduced in Schindler (2000), and virtual large cardinals were properly investigated in Gitman and Schindler (2018), where the key difference between the generics and the virtuals is that in the virtual case we require that the target model is a subset of the ground model.
+
+These large cardinals are unique in the sense that they allow us to work with embeddings as in the higher reaches of the large cardinal hierarchy, but being consistently below $V=L$, enabling equiconsistencies at these ``lower levels''.
+
+To take a few examples, Schindler (2000) has shown that the existence of a remarkable cardinal is equiconsistent with thte statement that the theory of $L(\mathbb R)$ cannot be changed by proper forcing, which was improved to semi-proper forcing in Schindler (2004). Wilson ($\infty$) has shown that the existence of a generic Vop\v enka cardinal is equiconsistent with
+\[
+  \textsf{ZF} + \text{${\bf\Sigma}^1_2$ is the class of all $\omega_1$-Suslin sets} + \Theta = \omega_2,
+\]
+and Schindler and Wilson ($\infty$) has shown that the existence of a virtually Shelah cardinal is equiconsistent with
+\[
+  \textsf{ZF} + \text{every universally Baire set of reals has the perfect set property}.
+\]
+
+\begin{definition}
+  Let $\theta>\kappa$ be regular. Then $\kappa$ is...
+  \begin{itemize}
+    \item \textbf{generically $\theta$-(power)-measurable} if there is a generic ($\kappa$-powerset preserving) embedding $\pi:H_\theta^V\to N$ for some transitive $N$ with $\crit\pi=\kappa$;
+    \item \textbf{generically $\theta$-prestrong} if it's generically $\theta$-measurable and $H_\theta^V\subset N$;
+    \item \textbf{generically $\theta$-strong} if it's generically $\theta$-prestrong and $\pi(\kappa)\geq\theta$;
+    \item \textbf{generically $\theta$-supercompact} if it's generically $\theta$-strong and ${^{<\theta}} N\cap V\subset N$.\\
+  \end{itemize}
+
+  We further replace ``generically'' by \textbf{virtually} when $N\subset V$. When we don't mention $\theta$ we mean that it holds for all $\theta>\kappa$, e.g. a generically measurable cardinal $\kappa$ is generically $\theta$-measurable for all regular $\theta>\kappa$.
+\end{definition}
+
+\begin{theorem}[Gitman]
+  Every virtually $(2^{<\theta})^+$-strong cardinal is virtually $\theta$-supecompact.
+\end{theorem}
+
+%\textbf{Question 1.} 
+\begin{question} 
+Are generically $\theta$-strongs always generically $\theta$-supercompact? Maybe in $L$? 
+\end{question} 
+
+%\defi{
+  Let $\kappa$ be an uncountable cardinal, $\theta>\kappa$ regular and $\gamma<\kappa^+$ an ordinal. Then define the \textbf{filter game} $\G^\theta_\gamma(\kappa)$ with $\gamma{+}1$ rounds:
+  \[
+    \begin{array}{cccccccccc}
+      \text{I} && M_0 && M_1 && \cdots && M_\gamma\\
+      \text{II} && \mu_0 && \mu_1 && \cdots && \mu_\gamma
+    \end{array}
+  \]
+
+  Here $M_\alpha\prec H_\theta$ is a weak $\kappa$-model for every $\alpha\leq\gamma$, $\mu_\alpha$ is an $M_\alpha$-normal $M_\alpha$-measure on $\kappa$ with $\ult(M_\alpha,\mu_\alpha)$ being wellfounded for all $\alpha\leq\gamma$, and the $M_\alpha$'s and $\mu_\alpha$'s are $\subset$-increasing. For limit ordinals $\alpha\leq\gamma$ we furthermore require that $M_\alpha=\bigcup_{\xi<\alpha}M_\xi$ and $\mu_\alpha=\bigcup_{\xi<\alpha}\mu_\xi$. Player II wins iff they could continue playing throughout all $\gamma{+}1$ rounds.
+%}
+
+\begin{theorem}[Schindler-N.]
+  Let $\kappa<\theta$ be regular cardinals. If $\kappa$ is virtually $\theta$-prestrong then player II has a winning strategy in $\G^\theta_\omega(\kappa)$, and if player II has a winning strategy in $\G_\omega^\theta(\kappa)$ then $\kappa$ is generically $\theta$-power-measurable. In particular, $\G^\theta_\omega(\kappa)^L\sim\C^\theta_\omega(\kappa)^L$.
+\end{theorem}
+
+%\textbf{Question 2.} 
+\begin{question} 
+If $\kappa$ is generically $\theta$-power-measurable, does player II then have a winning strategy in $\mathcal{G}^\theta_\omega(\kappa)$? 
+\end{question} 
+
+\begin{proposition}
+  For any regular cardinal $\theta$, generically $\theta$-measurable cardinals are equivalent to virtually $\theta$-prestrong cardinals in $L$.
+\end{proposition}
+
+%\textbf{Question 3.} 
+\begin{question} 
+What happens to the level-by-level picture in larger core models? E.g., is every generically $\theta$-measurable also virtually $\theta$-prestrong in $K$ below a Woodin? Or just virtually $\theta$-measurable?
+\end{question} 
+
+%\nocite{*} 
+%\bibliographystyle{alpha}
+%\bibliography{references-dan,referneces-victoria}
+
+\begin{thebibliography}{SNW19}
+
+\bibitem[DL89]{MR1026565}
+Hans-Dieter Donder and Jean-Pierre Levinski.
+\newblock On weakly precipitous filters.
+\newblock {\em Israel J. Math.}, 67(2):225--242, 1989.
+
+\bibitem[FG10]{MR2609985}
+Asaf Ferber and Moti Gitik.
+\newblock On almost precipitous ideals.
+\newblock {\em Arch. Math. Logic}, 49(3):301--328, 2010.
+
+\bibitem[GS18]{MR3860539}
+Victoria Gitman and Ralf Schindler.
+\newblock Virtual large cardinals.
+\newblock {\em Ann. Pure Appl. Logic}, 169(12):1317--1334, 2018.
+
+\bibitem[Sch00]{MR1765054}
+Ralf-Dieter Schindler.
+\newblock Proper forcing and remarkable cardinals.
+\newblock {\em Bull. Symbolic Logic}, 6(2):176--184, 2000.
+
+\bibitem[Sch04]{MR2096166}
+Ralf Schindler.
+\newblock Semi-proper forcing, remarkable cardinals, and bounded {M}artin's
+  maximum.
+\newblock {\em MLQ Math. Log. Q.}, 50(6):527--532, 2004.
+
+\bibitem[SNW19]{MR3922802}
+Dan Saattrup~Nielsen and Philip Welch.
+\newblock Games and {R}amsey-like cardinals.
+\newblock {\em J. Symb. Log.}, 84(1):408--437, 2019.
+
+\bibitem[Wil]{Wilson}
+Trevor Wilson.
+\newblock Generic {V}op\v enka cardinals and models of {ZF} with few
+  {$\aleph_1$}-suslin sets.
+\newblock Submitted.
+
+\end{thebibliography}
+
+\fi 
+
+
+\end{document} 
