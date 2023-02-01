@@ -1,4 +1,4 @@
 ---
-layout: people
+layout: talks
 title: "Talks"
 ---
