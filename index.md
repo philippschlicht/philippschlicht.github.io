@@ -3,6 +3,9 @@ layout: home
 title: "Home"
 ---
 
+
+My research field is mathematical logic, in particular set theory, descriptive set theory and applications to analysis, model theory, graph theory, computability and theoretical computer science. 
+
 I work on the EPSRC project ''Graphs on generalised Baire spaces'' with <a href="https://people.maths.bris.ac.uk/~mapdw/">Prof. Philip Welch</a> at the University of Bristol.
 <!--The project aims to understand the structure of large graphs that satisfy topological conditions.-->
 In which circumstances can you colour a graph with few colours such that no adjacent vertices are assigned the same colour?
