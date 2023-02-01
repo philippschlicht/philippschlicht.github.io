@@ -26,4 +26,4 @@ social:
 - {icon: 'linkedin', link: 'https://linkedin.com/in/lenpaul'}
 
 contacts:
-- {name: 'Dr. Academia', title: 'Professor', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/contact.jpg'}
+- {name: 'Philipp Schlicht', department: 'School of Mathematics', institution: 'University of Bristol', institution_address: 'Fry Building, Woodland Road, Bristol, BS8 1UG, UK', email: 'philipp.schlicht@bristol.ac.uk', office: 'Fry Building 1.10', image: 'assets/img/contact.jpg'}
