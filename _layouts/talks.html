@@ -1,7 +1,86 @@
----
-layout: default
----
 
-{{ content }}
+	<h3>{{ page.title }}</h3>
+<br>
 
-{% include talks.html %}
+<p>
+Recent conference and seminar talks, email me for slides from before 2020.
+
+</p>
+
+	<ol reversed>
+	<li> <a href=/slides/2022_Leeds_12.pdf>Forcing over choiceless models and generic absoluteness</a>
+				<br>Leeds Logic Seminar, December 2022</li>
+	<li> <a href=/slides/2022_Leeds.pdf>Interaction of determinacy and forcing</a>
+			<br>Leeds Models and Sets Seminar, October 2022</li>
+	<li> <a href=/slides/2022_Berlin.pdf>Interaction of determinacy and forcing</a>
+			<br>Annual meeting of the German Mathematical Society (DMV), Logic Section, Berlin, September 2022</li>
+	<li> <a href=/slides/2022_Torino.pdf>Baby measurable cardinals</a>
+			<br>European Set Theory Conference, Torino, August-September 2022 (contributed)</li>
+	<li> <a href=/slides/2022_Reykjavik.pdf>Countable ranks at the first and second projective levels</a>
+			<br>Logic Colloquium 2022, Reykjavik, July 2022 (contributed)</li>
+	<li> Determinacy and iterated forcing (blackboard talk)
+			<br>5th M&uuml;nster Conference on Inner Model Theory, June 2022</li>
+	<li> <a href=/slides/2022_Toronto.pdf>Open dihypergraphs on generalized Baire spaces</a>
+			<br> Toronto Set Theory Seminar, April 2022</li>
+	<li> <a href=/slides/2022_Kilpisjaervi.pdf>Open dihypergraphs on generalized Baire spaces</a>
+			<br> Arctic Set Theory Workshop, Kilpisj&auml;rvi, February 2022</li>
+	<li> <a href=/slides/2022_Budapest.pdf>Open dihypergraphs on generalized Baire spaces</a>
+		<br> Model Theoretic Logics and their Frontiers, Budapest, January 2022</li>
+	<li> <a href=/slides/2021_Barcelona.pdf>Forcing axioms via ground model interpretations</a>
+		<br> Set theory seminar, University of Barcelona, December 2021 </li>
+	<li> <a href=/slides/2021_Dagstuhl.pdf>Effective overtness of generalised Cantor spaces</a>
+			<br> Descriptive set theory and computable topology, Dagstuhl, November 2021 </li>
+ 	<li> <a href=/slides/2021_Passau.pdf>Forcing axioms via ground model interpretations</a>
+		<br> Joint meeting of the German Mathematical Society (DMV) and Austrian Mathematical Society (&Ouml;MG), University of Passau, September 2021 </li>
+	<li> <a href=/slides/2020_New_York.pdf>The recognisable universe in the presence of measurable cardinals</a>
+		<br> New York Set Theory Seminar, CUNY, November 2020 </li>
+	<li> <a href=/slides/2020_Singapore.pdf>Structural results about Pi11 and Sigma12 sets</a>
+		<br> Logic Seminar, National University of Singapore, November 2020 </li>
+  <li> <a href=/slides/2020_Vienna.pdf>Tree forcings, sharps and absoluteness</a>
+		<br> KGRC Research Seminar, Universit&auml;t Wien, October 2020 </li>
+	<li> <a href=/slides/2020_Ghent_Leeds.pdf>Borel sets in effective descriptive set theory</a>
+		<br> Ghent-Leeds Virtual Logic Seminar, September 2020 </li>
+	<li> The length of countable ranks (blackboard talk)
+		<br> Logic and set theory seminar, University of Bristol, <!--26--> February 2020</li>
+	<li> <a href=/slides/2020_Denver.pdf>Forcing over Cohen's symmetric model</a>
+		<br>  Special session on choiceless set theory and related topics, Joint Mathematics Meeting Denver, 16 January 2020</li>
+	</ol>
+
+<!--
+	<li> Internal absoluteness
+		<br> Set Theory in the United Kingdom 4, University of Oxford, 14 December 2019</li>
+	<li> Internal absoluteness
+		<br> Set theory seminar, University of Paris, 12 December 2019</li>
+  <li> Oligomorphic groups are essentially countable
+		<br> Logic seminar, University of Paris, 9 December 2019</li>
+  <li> A variant of generic supercompactness
+		<br> Set Theory and Infinity, RIMS Kyoto, 22 November 2019</li>
+	<li> Open problems on generically supercompact cardinals
+		<br> (contributed) Set Theory in the United Kingdom 3, University of Leeds, 3 October 2019</li>
+	<li> Internal absoluteness
+		<br> 14th Luminy workshop on set theory, CIRM, Marseille, 23 September 2019</li>
+	<li> Ideal topologies on generalized Cantor spaces
+		<br> BIRS Oaxaca, 6 August 2019</li>
+	<li> Internal absoluteness
+		<br> (contributed) European Set Theory Conference, University of Vienna, 1 July 2019</li>
+  <li> Randomness notions for infinite time Turing machines
+		<br> Higher Recursion Theory and Set Theory Conference, National University of Singapore, 3 June 2019</li>
+	<li> Automatic structures: an introduction
+		<br> Logic seminar, Swansea University, 4 April 2019</li>
+	<li> Open problems on internal absoluteness
+		<br> (contributed) Set Theory in the United Kingdom 1, University of Cambridge, 16 February 2019</li>
+
+	</ol>
+-->
+
+<!--
+	<img src="/images/Vienna 2018.jpg" style="height: 140px;"/>
+-->
+
+
+	<ul class="posts">
+
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
