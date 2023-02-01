@@ -1,8 +1,6 @@
 menu:
 
 - {name: 'publications', url: '/publications'}
-- {name: 'talks', url: '/people'}
-- {name: 'teaching', url: '/people'}
 - {name: 'people', url: '/people'}
 - {name: 'courses', url: '/courses'}
 - {name: 'cv', url: '/cv'}
