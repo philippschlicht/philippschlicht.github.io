@@ -3,7 +3,7 @@ menu:
 - {name: 'publications', url: '/publications'}
 - {name: 'talks', url: '/talks'}
 - {name: 'teaching', url: '/teaching'}
-- {name: 'people', url: '/people'}
+- {name: 'contact', url: '/contact'}
 
 
 
