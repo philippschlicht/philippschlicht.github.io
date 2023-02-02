@@ -1,0 +1,6 @@
+Title: Higher Independence
+
+Abstract: We will consider higher analogues of the notion of 
+independence on $\omega$, introduce the number $\mathfrak{i}(\kappa)$ 
+and show that consistently $\mathfrak{i}(\kappa)<2^\kappa$ for certain 
+$\kappa$.

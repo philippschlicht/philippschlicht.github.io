@@ -1,8 +1,0 @@
-name: Philipp Schlicht
-
-remote_theme: academic-jekyll-theme
-
-
-title: [Philipp Schlicht]
-description: [Research]
-plugins: ['jekyll/scholar']

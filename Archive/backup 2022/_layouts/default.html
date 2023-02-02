@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+{% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="white">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' |
+append: site.github.build_revision | relative_url }}">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<head>
+  <meta charset="UTF-8">
+
+{% seo %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' |
+append: site.github.build_revision | relative_url }}">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+
+<!--
+<head>
+<style type="text/css">
+.block1 {
+  display: inline-block;
+  width: 230px;
+  height: 100px;
+}
+.block2 {
+  display: inline-block;
+  width: 290px;
+  height: 100px;
+}
+ul {
+list-style-type: disc;
+}
+
+li {
+padding: 0;
+margin: 0 0 0.2em 1.8em;
+}
+</style>
+</head>
+-->
+
+  </head>
+
+
+  <body style="margin:10px;margin-left:40px;padding:10px">
+    <section class="page-header">
+	<div id="header">
+ 	</div>
+    <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+        <h1 class="project-name"></h1>
+        <a href="/" class="nav" style="color:#AAAAAA;">About</a> &nbsp;&nbsp;
+        <a href="/publications" class="nav" style="color:#AAAAAA;">Publications</a> &nbsp;&nbsp;
+        <a href="/talks" class="nav" style="color:#AAAAAA;">Talks</a> &nbsp;&nbsp;
+	      <a href="/meetings" class="nav" style="color:#AAAAAA;">Conferences</a>&nbsp;&nbsp;
+        <a href="/teaching" class="nav" style="color:#AAAAAA;">Teaching</a>&nbsp;&nbsp;
+        <a href="/fotos" class="nav" style="color:#AAAAAA;">Photos</a>&nbsp;&nbsp;
+        <a href="/videos" class="nav" style="color:#AAAAAA;">Videos</a>&nbsp;&nbsp;
+<!--       <a href="/CV" class="nav" style="color:#AAAAAA;">Research</a>
+-->
+    </section>
+<br><br>
+
+	    <div class="main-content">
+	    <section id="main-content">
+			{{ content }}
+</section>
+
+	   <!-- <aside class="sidebar small-sidebar right-sidebar">
+		    <h4> Links </h4>
+		     </aside>-->
+
+
+	   <!-- 	<footer class="site-footer">
+	       My <a href="http://www.bristol.ac.uk/maths/people/philipp-p-schlicht/">webpage</a> at the University of Bristol.
+         </footer>
+         -->
+	    </div>
+
+
+  </body>
+</html>

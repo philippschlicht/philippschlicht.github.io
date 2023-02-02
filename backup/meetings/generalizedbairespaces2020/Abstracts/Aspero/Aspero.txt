@@ -1,3 +1,0 @@
-Title: The $\kappa$-Strong Proper Forcing Axiom.
-
-Abstract: This talk will focus on high analogues of the notion of strong properness and on the corresponding forcing axioms. I will also address the semiproper version of these ideas. This is mostly joint work with Cox, Karagila and Weiss.

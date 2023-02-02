@@ -1,0 +1,641 @@
+
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amscd,amsthm,amsfonts,amstext,amsbsy,mathrsfs,hyperref,upgreek,mathtools,stmaryrd,enumitem,bbm, mathabx}
+%\usepackage{MnSymbol}
+%\usepackage[shadow]{todonotes}
+% \usepackage{citeref, breakcites}
+
+\usepackage[
+%disable, 
+textsize=footnotesize,color=yellow!40, bordercolor=white]{todonotes}
+
+\usepackage%[scale=0.682]
+[a4paper, margin=1.2in]{geometry}
+
+\usepackage{xcolor}
+\definecolor{blue}{rgb}{0,0,1}
+\hypersetup{
+	unicode=true,
+	colorlinks=true,
+	citecolor=blue,
+	linkcolor=blue,
+	anchorcolor=blue
+}
+
+\hypersetup{colorlinks=true}
+
+% other fonts
+\newcommand\V{\mathsf{V}}
+\newcommand{\Minimal}{\MM[\![G]\!]}
+\newcommand\bB{\boldsymbol{{\rm B}}}
+\newcommand\bN{\boldsymbol{{\rm N}}}
+\renewcommand{\L}{\mathcal{L}}
+%\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\EE}{\mathbb{E}}                                                       
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\Ss}{\mathbb{S}}
+\newcommand{\HHH}[1]{\mathrm{H}({#1})}
+\newcommand{\Hes}{\mathfrak{H}}
+\newcommand{\pre}[2]{{}^{#1} #2}
+\newcommand{\seq}[2]{\langle #1 \mid #2 \rangle}
+\newcommand{\set}[2]{\{ #1 \mid #2 \}}
+\newcommand{\Nbhd}{\mathbf{N}}
+\newcommand{\Bor}{\mathsf{Bor}}
+\newcommand{\pI}{\mathrm{I}}
+\newcommand{\pII}{\mathrm{II}}
+%\newcommand{\K}[1]{\boldsymbol{K}_{#1}}
+\newcommand{\anf}[1]{{\text{``}\hspace{0.3ex}{#1}\hspace{0.01ex}\text{''}}}
+\newcommand{\op}{\mathsf{op}}
+\newcommand{\rnk}{\mathsf{rnk}}
+
+% operators
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\cof}{\operatorname{cof}}
+\newcommand{\otp}[1]{{{\rm{otp}}\left(#1\right)}}
+\newcommand{\supp}[1]{{{\rm{supp}}(#1)}}
+\newcommand{\proj}{\operatorname{p}}
+\newcommand{\pow}{\mathscr{P}}
+\newcommand{\Trcl}{\operatorname{Trcl}}
+\newcommand{\p}{\operatorname{p}}
+\newcommand{\leng}{\operatorname{lh}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\lr}{\leftrightarrow}
+\newcommand{\Llr}{\Longleftrightarrow}
+\newcommand{\tc}{\operatorname{tc}}
+\newcommand{\depth}{\operatorname{d}}
+%\newcommand{\Add}{\operatorname{Add}}
+\newcommand{\ul}{\ulcorner}
+\newcommand{\ur}{\urcorner}
+\newcommand{\lh}{\operatorname{lh}}
+\newcommand{\llangle}{\langle\!\langle}
+\newcommand{\rrangle}{\rangle\!\rangle}
+\newcommand{\vn}{\vec{n}}
+\newcommand{\one}{\mathbbm1}
+\newcommand{\lkk}{\L_{\kappa,\kappa}}
+\newcommand{\gbr}[1]{{\ulcorner{#1}\urcorner}}
+\newcommand{\Def}{\mathrm{Def}}
+% spaces
+\newcommand{\On}{{\mathrm{Ord}}}
+%\newcommand{\Card}{{\sf Card}}
+\newcommand{\Lim}{{\mathrm{Lim}}}
+\newcommand{\Fm}{{\mathrm{Fml}}}
+%\newcommand{\Sym}{{\rm Sym}}
+\newcommand{\push}{{\mathrm{push}}}
+
+\newcommand{\spl}{\mathrm{split}}
+
+
+% axioms
+\newcommand{\AD}{{\sf AD}}
+\newcommand{\ZFC}{{\sf ZFC}}
+\newcommand{\ZF}{{\sf ZF}}
+\newcommand{\AC}{{\sf AC}}
+\newcommand{\DC}{{\sf DC}}
+\newcommand{\KM}{{\sf KM}}
+\newcommand{\GB}{{\sf GB}}
+\newcommand{\GBC}{{\sf GBC}}
+
+\newcommand{\ran}{\mathrm{ran}} 
+
+% others
+\newcommand{\Linf}{\L_{\omega_1 \omega}}
+
+%Luecke
+\newcommand{\map}[3]{{#1}:{#2}\longrightarrow{#3}}
+\newcommand{\Map}[5]{{#1}:{#2}\longrightarrow{#3};~{#4}\longmapsto{#5}}
+\newcommand{\pmap}[4]{{#1}:{#2}\xrightarrow{#4}{#3}}
+\newcommand{\Set}[2]{\{{#1}~\vert~{#2}\}}
+\newcommand{\dom}[1]{{{\rm{dom}}(#1)}}
+\newcommand{\length}[1]{{{\rm{lh}}(#1)}}
+\newcommand{\VV}{{\rm{V}}}
+\newcommand{\WW}{{\rm{W}}}
+\newcommand{\LL}{{\rm{L}}}
+\newcommand{\Add}[2]{{\rm{Add}}({#1},{#2})}
+\newcommand{\goedel}[2]{{\prec}{#1},{#2}{\succ}}
+\newcommand{\ot}{ot}
+
+
+
+
+\newcommand{\ZZ}{\mathbb{Z}} 
+\newcommand{\QQ}{\mathbb{Q}} 
+\newcommand{\RR}{\mathbb{R}} 
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\CCC}{\mathbb{C}} 
+\newcommand{\NN}{\mathbb{N}} 
+
+\newcommand{\NNN}{\mathcal{N}} 
+\newcommand{\MM}{\mathcal{M}}
+\newcommand{\KK}{\mathcal{K}} 
+\renewcommand{\AA}{\mathcal{A}}
+\newcommand{\BB}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}} 
+\newcommand{\DD}{\mathcal{D}} 
+
+%\newcommand{\MM}{\mathbb{M}}
+%\newcommand{\NN}{\mathbb{N}} 
+%\newcommand{\KK}{\mathbb{K}} 
+%\renewcommand{\AA}{\mathbb{A}}
+%\newcommand{\BB}{\mathbb{B}}
+%\newcommand{\CC}{\mathbb{C}} 
+%\newcommand{\DD}{\mathbb{D}} 
+
+
+
+
+\newcommand{\K}{\mathcal{K}} 
+\newcommand{\Th}{\mathrm{Th}} 
+
+\newcommand{\DLO}{\mathrm{DLO}} 
+\newcommand{\ACF}{\mathrm{ACF}} 
+
+\newcommand{\lex}{\mathrm{lex}} 
+
+\newcommand{\cC}{\mathcal{C}} 
+\newcommand{\Mod}{\mathrm{Mod}} 
+
+\newcommand{\acl}{\mathrm{acl}} 
+\newcommand{\tp}{\mathrm{tp}} 
+\newcommand{\Aut}{\mathrm{Aut}} 
+\newcommand{\Sym}{\mathrm{Sym}} 
+
+\newcommand{\Lev}{\mathrm{Lev}} 
+
+
+
+%\setcounter{secnumdepth}{2}
+% theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{subclaim*}{Subclaim}
+\newtheorem*{Vaughtconj}{Vaught's Conjecture}
+\theoremstyle{definition}
+%\newtheorem{claim}{Claim}[theorem]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{notation}{Notation}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{example*}{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+
+% enumeration
+
+\newenvironment{enumerate-(a)}{\begin{enumerate}[label={\upshape (\alph*)}, leftmargin=2pc]}{\end{enumerate}}
+
+\newenvironment{enumerate-(a)-r}{\begin{enumerate}[label={\upshape (\alph*)}, leftmargin=2pc,resume]}{\end{enumerate}}
+
+\newenvironment{enumerate-(A)}{\begin{enumerate}[label={\upshape (\Alph*)}, leftmargin=2pc]}{\end{enumerate}}
+
+\newenvironment{enumerate-(A)-r}{\begin{enumerate}[label={\upshape (\Alph*)}, leftmargin=2pc,resume]}{\end{enumerate}}
+
+\newenvironment{enumerate-(i)}{\begin{enumerate}[label={\upshape (\roman*)}, leftmargin=2pc]}{\end{enumerate}}
+
+\newenvironment{enumerate-(i)-r}{\begin{enumerate}[label={\upshape (\roman*)}, leftmargin=2pc,resume]}{\end{enumerate}}
+
+\newenvironment{enumerate-(I)}{\begin{enumerate}[label={\upshape (\Roman*)}, leftmargin=2pc]}{\end{enumerate}}
+
+\newenvironment{enumerate-(I)-r}{\begin{enumerate}[label={\upshape (\Roman*)}, leftmargin=2pc,resume]}{\end{enumerate}}
+
+\newenvironment{enumerate-(1)}{\begin{enumerate}[label={\upshape (\arabic*)}, leftmargin=2pc]}{\end{enumerate}}
+
+\newenvironment{enumerate-(1)-r}{\begin{enumerate}[label={\upshape (\arabic*)}, leftmargin=2pc,resume]}{\end{enumerate}}
+
+\newenvironment{itemizenew}{\begin{itemize}[leftmargin=2pc]}{\end{itemize}}
+
+
+
+
+\begin{document}
+
+%\thanks{The first and third author were partially supported by DFG-grant LU2020/1-1.}
+
+%\subjclass[2010]{03E30, 03E40, 03E70} 
+
+%\keywords{Class forcing, Separation, Replacement} 
+
+
+\author{Philipp Schlicht}
+\address{Philipp Schlicht, School of Mathematics, University of Bristol, Fry Building, Woodland Road, Bristol, BS8 1UG, UK}
+\email{philipp.schlicht@bristol.ac.uk}
+\urladdr{}
+
+%\title{}
+\date{\today}
+
+
+\title[Basics of descriptive set theory]{The very basics of descriptive set theory}
+
+%\begin{abstract} t
+%Lecture notes from the lecture Advanced mathematical logic: Model theory, Bonn October-November 2017. 
+%\end{abstract} 
+
+\maketitle
+
+
+\setcounter{tocdepth}{2}
+%\tableofcontents 
+
+
+%\newpage 
+
+
+
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%\section{Basics of descriptive set theory} 
+
+\begin{abstract} 
+This note presents elementary proofs that any two uncountable Polish metric spaces are Borel isomorphic, a function is Borel measurable if and only if its graph is a Borel set, and the auxiliary result that disjoint analytic sets can be separated by Borel sets. 
+The proofs are much shorter than those in the literature. 
+%The proofs are elementary, but stand in contrast with those in the literature, which usually re
+%much shorter than proofs in the literature and are obtained by removing all redundancies. 
+%The proofs are elementary, but stand in contrast with those in the literature, which usually refer to a number of other results. 
+\end{abstract} 
+
+%In section, we review some material on standard Borel spaces, Borel sets, analytic sets and Borel measurable functions, in particular the fact that any two uncountable standard Borel spaces are isomorphic. 
+%We give proofs from scratch. 
+%We give very direct and concise proofs from scratch, in contrast to most proofs in the literature, which refer to other theorems. 
+
+%%%%%%%%%%%%
+\section{Standard Borel spaces} 
+
+\begin{definition} 
+\begin{enumerate-(a)} 
+\item 
+A metric space $(X,d)$ is called \emph{Polish} if it is countably based and complete. 
+\item 
+A topological space $(X,\tau)$ is called \emph{Polish} if there is a Polish metric $d$ on $X$ that induces $\tau$. 
+\item 
+A pair $(X,\sigma)$ is called a \emph{standard Borel space} if $\sigma$ is the Borel $\sigma$-algebra generated by a Polish topology on $X$.  
+\end{enumerate-(a)} 
+\end{definition} 
+
+Our notation is $(X,d)$, $(Y,d)$, $(Z,d)$ for Polish metric spaces and the metric $d$ is often omitted. 
+We further write $d(A)$ for the \emph{diameter} $\sup_{x,y\in A} d(x,y)$ of a subset $A$ of $X$, and $B_\epsilon(x)$ for the open ball of radius $\epsilon$ around $x$. 
+
+\begin{example} 
+$\RR^n$, Baire space $\NN^\NN$,  Cantor space $2^\NN$, compact metric spaces, countably based locally compact metric spaces. 
+\end{example} 
+
+Here $\NN^\NN$ caries the product topology. 
+The standard metric on $\NN^\NN$ is defined by $d(x,y)=\frac{1}{2^n}$ for the least $n$ with $x(n)\neq y(n)$, where $x\neq y$. 
+The basic open subsets of $\NN^\NN$ (clopen balls) are denoted $N_t=\{x\in \NN^\NN\mid t\subseteq x\}$ for $t\in \NN^{<\NN}$. 
+The following combinatorial presentation of $\NN^\NN$ via trees is useful for constructions of continuous maps. 
+A \emph{tree} on $\NN$ is a subset of $\NN^{<\NN}$ that is closed under initial segments. 
+It is easy to see that the closed subsets of $\NN^\NN$ are exactly the sets of the form $[T]=\{x\in \NN^\NN\mid \forall n\ x{\upharpoonright}n \in T\}$ for trees $T$ on $\NN$. 
+Let $|t|$ denote the length of a sequence $t\in \NN^{<\NN}$. 
+Let $x{\upharpoonright}n$ denote the restriction of a sequence $x\in \NN^\NN$ to $\{0,\dots,n-1\}$. 
+A tree is called \emph{pruned} if it has no end nodes. 
+Let $\Lev_n(T)$ denote the $n$-th level of a tree $T$, so the elements of $\Lev_n(T)$ are sequences of length $n$. 
+%where $\Lev_0(T)$ consists only of the root. 
+%A node $t\in T$ \emph{splits} in $T$ if it has at least $2$ direct successors in $T$. Let $\spl(T)$ denote the set of splitting nodes of $T$. A tree $T$ is called \emph{perfect} if it is nonempty, pruned and every node in $T$ has some node in $\spl(T)$ above it. 
+
+\bigskip 
+Note that Polish spaces are closed under countable products. 
+To see this, take  a sequence $\vec{X}=\langle X_n\mid n\in\NN\rangle$ of Polish spaces and assume that each metric $d$ is bounded by replacing $d$ with $\max\{d,1\}$. 
+Then form the weighted sum over all coordinates with factors $2^{-n}$. 
+It is easy to show that this metric on the product is complete and induces the product topology. 
+
+\bigskip 
+We next show that any two uncountable Polish spaces are \emph{Borel isomorphic} in the sense of a bijection that preserves Borel sets both ways. 
+
+%\begin{definition} 
+%A \emph{Borel isomorphism} $f\colon A\rightarrow B$ between Borel subsets $A$ and $B$ of standard Borel spaces is a bijection that preserves Borel sets in both directions. 
+%\end{definition} 
+
+\begin{proposition} \label{Borel isomorphism of Polish spaces} 
+Any two uncountable Polish spaces are Borel isomorphic. 
+\end{proposition} 
+
+This will follow from the next two lemmas. 
+To state them, we fix some notation. 
+%The first three lemmas show that any uncountable Polish space $X$ is Borel isomorphic to a Borel subset of $\NN^\NN$ and vice versa. The last lemma show that this is sufficient to obtain Proposition \ref{Borel isomorphism of Polish spaces}. 
+%\begin{definition} 
+%\begin{enumerate-(a)} 
+%\item 
+An \emph{$\epsilon$-cover} of a subset $A$ of $X$ is a sequence $\vec{A}=\langle A_i\mid i<N\rangle$ with $N\in \NN\cup\{\NN\}$ whose union equals $A$ with $d(A_i)<\epsilon$ and $\overline{A_i}\subseteq A$ for all $i\in\NN$. 
+%\item 
+%Let $T$ be a pruned subtree of $\NN^{<\NN}$ and $\vec{\epsilon}=\langle \epsilon_i \mid i\in\NN\rangle$ be any sequence in $\RR^+$ converging to $0$. 
+%A \emph{$T$-scheme} for $X$ is a family $\vec{A}=\langle A_t\mid t\in T\rangle$ of nonempty subsets of $X$ with $A_0=X$ that satisfies the following properties for all $t\in T$: \\ 
+% (i) $A_t=\bigcup_{ti \in T} A_{ti}$ (disjoint), \ \ (ii) $\overline{A_{ti}} \subseteq A_t$ if $ti\in T$, and \ \ (iii) $d(A_t)<\epsilon_n$ if $|t|=n$. 
+%\end{enumerate-(a)} 
+%\end{definition} 
+An \emph{$F_\sigma$-set} is a countable union of closed sets. 
+Note that all open sets are $F_\sigma$. 
+
+\begin{lemma} \label{partition epsilon-covers} 
+Let $\epsilon>0$. 
+\begin{enumerate-(1)} 
+\item \label{partition epsilon-covers - open sets} 
+Any open set has an $\epsilon$-cover consisting of open sets. 
+\item 
+Any $F_\sigma$-set has a disjoint $\epsilon$-cover consisting of $F_\sigma$-sets. 
+\end{enumerate-(1)} 
+\end{lemma} 
+\begin{proof} 
+(1) 
+Suppose that $A$ is an open subset of $X$. 
+Fix a countable dense subset $Q$ of $X$ and let $\vec{A}=\langle A_i\mid i\in N\rangle$ list all open balls $B_q(x)$ with $x\in Q$, $q\in (0,\frac{\epsilon}{2})\cap \QQ$ and $\overline{B_q(x)}\subseteq A$. 
+It suffices to show that $A=\bigcup_{i\in N} A_i$. To see this, take any $x\in A$ and find some $q\in \QQ$ with $B_{2q}(x)\subseteq A$. 
+Since $Q$ is dense, there is some $y\in B_q(x)\cap Q$. We then also have $x\in B_q(y)$ and thus it suffices to show that $\overline{B_q(y)}\subseteq A$. 
+This holds since $\overline{B_q(y)}\subseteq B_{2q}(x)\subseteq A$. 
+%Then $x\in B_q(y)$ and $\overline{B_q(y)}\subseteq A$. 
+%By the latter, $B_q(y)$ appears in $\vec{A}$. 
+
+(2) 
+Suppose that $A$ is an $F_\sigma$ subset of $X$. 
+Take a sequence $\vec{A}=\langle A_i\mid i\in N\rangle$ whose union equals $A$ with $A_i$ closed. 
+Then $A$ is the disjoint union of the sets $B_i=A_i\setminus (A_0\cup\dots\cup A_{i-1})$. 
+Since $B_i$ is of the form $C\cap D$ with $C$ open and $D$ closed, it suffices to prove the claim for sets of this form. 
+To see this, note that by (a), there is an $\epsilon$-cover $\vec{C}=\langle C_i\mid i\in K\rangle$ of $C$ consisting of open sets. 
+Let $\vec{D}=\langle D_i\mid i\in K\rangle$ with $D_i=(C_i\setminus (C_0\cup\dots\cup C_{i-1}))\cap D$. 
+Then $\vec{D}$ is a disjoint $\epsilon$-cover of $C\cap D$ consisting of $F_\sigma$-sets. 
+\end{proof} 
+
+%The set $X^\sqbullet$ of $x\in X$ such that all neighborhoods of $x$ are uncountable is called the \emph{perfect kernel} of $X$. 
+%Since $X^\sqbullet$ is obtained by removing countably many basic open sets, each of which contains only countably many elements of $X$, it is a Borel subset of $X$. 
+
+%The next lemma yields a Borel isomorphism between $X$ and $\NN^\NN$ by working with $X^\sqbullet$ instead of $X$ and noting that countable sets do not matter for the existence of Borel isomorphisms. 
+%For the proof of this fact, we only need the second part of the lemma, but the first part will be useful later. 
+
+The existence of Borel isomorphisms between uncountable Polish spaces follows from the second part of the next lemma by noting that countable sets can be discarded. 
+We call a subset of $X$ \emph{co-countable} if its complement is countable. 
+
+\begin{lemma} \label{Polish space as continuous image} \ 
+%Any Polish space $X$ is Borel isomorphic to a Borel subset of $\NN^\NN$. 
+\begin{enumerate-(1)} 
+\item 
+There is a closed subset $A$ of $\NN^\NN$ and a continuous Borel isomorphism $f\colon A\rightarrow X$.\footnote{In fact, any continuous bijection is a Borel isomorphism, but we don't prove this here. } 
+\item 
+If $X$ is uncountable, then there is a continuous Borel isomorphism $f\colon \NN^\NN\rightarrow X$ onto a co-countable subset of $X$. 
+\end{enumerate-(1)} 
+\end{lemma} 
+\begin{proof} 
+(1) 
+Let $\vec{\epsilon}=\langle \epsilon_i \mid i\in\NN\rangle$ be a sequence in $\RR^+$ converging to $0$. 
+By iterative applications of Lemma \ref{partition epsilon-covers}, we obtain a tree $T\subseteq \NN^{<\NN}$ without end nodes and a family $\vec{A}=\langle A_t\mid t\in T\rangle$ of nonempty $F_\sigma$-subsets of $X$ with $A_0=X$ that satisfies the following properties for all $t\in T$: 
+%\\ 
+%\indent 
+(a) $A_t=\bigcup_{ti \in T} A_{ti}$ is a disjoint union, \ \ (b) $\overline{A_{ti}} \subseteq A_t$ for $ti\in T$, and \ \ (c) $d(A_t)<\epsilon_n$ if $|t|=n$. 
+%\\ 
+%\begin{enumerate-(a)} 
+%\item 
+%$A_t=\bigcup_{ti \in T} A_{ti}$ (disjoint), 
+%\item 
+%$\overline{A_{ti}} \subseteq A_t$ and 
+%\item 
+%$d(A_t)<\epsilon_n$ if $|t|=n$. 
+%\end{enumerate-(a)} 
+%Note that $A:=[T]$ is a closed subset of $\NN^{<\NN}$. 
+
+We then define $f\colon [T]\rightarrow X$ by choosing $f(x)$ as the unique element of $\bigcap_{n\in\NN} A_{x\upharpoonright n}$. 
+The latter is nonempty by (b), (c) and completeness of $X$, and has a unique element by (c). 
+
+\begin{claim*} 
+$f$ is bijective. 
+\end{claim*} 
+\begin{proof} 
+It follows from (a) that $f$ is injective. 
+To see that $f$ is surjective, take any $x\in X$. 
+By (a), there is for each $n\in\NN$ a unique $t_n\in T$ of length $n$ with $x\in A_{t_n}$. 
+By (b), $t_i\subseteq t_j$ for $i\leq j$. 
+Hence $f(y)=x$ for $y=\bigcup_{i\in\NN} t_i$. 
+\end{proof} 
+
+\begin{claim*} 
+$f$ is continuous. 
+\end{claim*} 
+\begin{proof} 
+If $U$ is open and $f(x)\in U$, then $A_{x{\upharpoonright}n}\subseteq U$ for sufficiently large $n$ by (c). 
+\end{proof} 
+
+\begin{claim*} 
+$f$ is a Borel isomorphism. 
+\end{claim*} 
+\begin{proof} 
+Since $f$ is continuous, it suffices that the images of Borel sets are Borel. 
+This holds since $f$ maps each basic open set $N_t$ onto $A_t$ and $f$ is bijective. 
+\end{proof} 
+Thus $f$ is as required. 
+
+\bigskip 
+
+(2) 
+A slight modification of the construction in (a) works. 
+We will ensure that $A_t$ is uncountable for all $t\in T$. 
+The change is that we remove a set $A_{ti}$ if it is countable. Note that one can easily ensure that $A_{ti}$ is uncountable for infinitely many $i\in\NN$ by partitioning the sets further. Therefore one can assume that $ti\in T$ for all $i\in\NN$ and thus $T=\NN^{{<}\NN}$. 
+During the construction only a countable set is removed in total, yielding the claim. 
+\end{proof} 
+
+Note that in (2), for any $X$ with isolated points, one cannot replace the co-countable set by $X$. 
+
+
+\iffalse 
+Using the previous lemma, one can see that any nonempty Polish space $X$ is the image of $\NN^\NN$ under a continuous function. 
+By the lemma, it suffices to show this in the case that $X=[T]$ is a closed subset of $\NN^\NN$. In this case, map each $x\in \NN^\NN$ to the leftmost $y\in [T]$ with $x{\upharpoonright}n \subseteq y$, where $n$ is maximal with $x{\upharpoonright}n\in T$. 
+
+\begin{lemma} \todo{This and the next lemma can then be omitted } 
+If $X$ is an uncountable Polish space, then $\NN^\NN$ is Borel isomorphic to a Borel subset of $X$. 
+\end{lemma} 
+\begin{proof} 
+Fix a sequence $\vec{\epsilon}=\langle \epsilon_i \mid i\in\NN\rangle$ in $\RR^+$ converging to $0$. 
+It is easy to construct a family $\vec{U}=\langle U_t\mid t\in \NN^{<\NN}\rangle$ of uncountable open subsets of $X$ such that: 
+(a) $\overline{U_t}\subseteq U_s$ for all $s\subseteq t$, \\ 
+(b) $U_s\cap U_t=\emptyset$ for all $s\neq t$ with $|s|=|t|$, and \ \  (c) $d(U_t)<\epsilon_n$ if $|t|=n$. 
+%$\lim_{i\rightarrow \infty} d(U_{ti})=0$ for all $t\in \NN^{<\NN}$. 
+% and $\lim_{i\rightarrow \infty} x_i\in Q$ for any sequence $\vec{x}=\langle x_i\mid i\in\NN\rangle$ with $x_i\in U_{ti}$ for all $i\in\NN$. 
+
+Define $f\colon \NN^\NN\rightarrow X$ by choosing $f(x)$ as the unique element of $\bigcap_{n\in \NN} U_{x{\upharpoonright}n}$. 
+It is then easy to see that $f$ is a homeomorphism onto its image. 
+To see that $f(\NN^\NN)$ is Borel, let $U_n=\bigcup_{|t|=n} U_t$. We then have $f(\NN^\NN)=\bigcap_{n\in\NN} U_n$. 
+\end{proof} 
+
+\begin{lemma} 
+Suppose that $X$ is Borel isomorphic to a Borel subset of $Y$ and vice versa. 
+Then $X$ and $Y$ are Borel isomorphic. 
+\end{lemma} 
+\begin{proof} 
+Suppose that $f\colon X\rightarrow Y$ and $g\colon Y\rightarrow X$ are Borel isomorphisms onto Borel sets. 
+We call a pair $(A,B)$ of Borel subsets of $X$ and $Y$ \emph{nice} if $f\colon A\rightarrow B$ and $g\colon B\rightarrow A$ are well-defined.\footnote{This is shorthand for $\ran(f{\upharpoonright}A)\subseteq B$ and $\ran(g{\upharpoonright}B)\subseteq A$. } 
+
+\begin{claim*} 
+For any nice pair $(A,B)$, there is a nice pair $(A_*,B_*)$ such that $A_*\subseteq A\cap g(B)$, $B_*\subseteq B\cap f(A)$ and the Borel sets $A\setminus A_*$, $B\setminus B_*$ are Borel isomorphic. 
+\end{claim*} 
+\begin{proof} 
+To see this, let $A^*=A\setminus g(B)$, $B^*=B\setminus f(A)$. 
+Since $A^*\cap g(B^*)=B^*\cap f(A^*)=\emptyset$, the maps $f\colon A^*\rightarrow f(A^*)$ and $g\colon B^*\rightarrow g(B^*)$ witness that 
+$A^*\cup g(B^*)$ and $B^*\cup f(A^*)$ are Borel isomorphic. 
+Thus $A_*=A\setminus (A^*\cup g(B^*))=g(B) \setminus g(B^*)$ and $B_*=B\setminus (B^*\cup f(A^*))=f(A)\setminus f(A^*)$ are as required. 
+\end{proof} 
+
+Let $A_0=X$ and $B_0=Y$. By iterative applications of the previous claim, we obtain decreasing sequences $\vec{A}=\langle A_n\mid n\in\NN\rangle$ and $\vec{B}=\langle B_n\mid n\in\NN\rangle$ of Borel sets such that $(A_n, B_n)$ is nice for all $n\in\NN$. Let $A=\bigcap_{n\in\NN} A_n$ and $B=\bigcap_{n\in\NN}B_n$. 
+
+It suffices to show that $A$ and $B$ are Borel isomorphic via $f$. 
+To see this, note that $f\colon A\rightarrow B$ is well-defined, since $f\colon A_n\rightarrow B_n$ is well-defined for all $n\in\NN$. 
+Moreover, $f\colon A\rightarrow B$ is surjective, since $B_{n+1}\subseteq f(A_n)$ for all $n\in \NN$. 
+\end{proof} 
+
+\fi 
+
+
+
+
+
+%%%%%%%%%%%%
+\section{Analytic sets} 
+
+Let $p\colon X\times Y\rightarrow X$ denote the first projection. 
+
+\begin{definition} 
+A subset $A$ of $X$ is called \emph{analytic} if $A=p(B)$ for some Borel subset $B$ of $X\times Y$ for some standard Borel space $Y$. 
+\end{definition} 
+
+Clearly this class contains all Borel sets. 
+
+By Proposition \ref{Borel isomorphism of Polish spaces}, one can take $Y$ to be a fixed uncountable Polish space. 
+Moreover, the analytic subsets of an uncountable standard Borel space $X$ are precisely the images of analytic subsets of $\NN^\NN$ under Borel isomorphisms. 
+Hence we can work in $\NN^\NN$ to study their properties. 
+To do this, we will go through a slight detour. 
+We call a subset $A$ of $\NN^\NN$ \emph{${}^*$analytic} if $A=p[C]$ for some closed subset $C$ of $\NN^\NN\times \NN^\NN$, equivalently $A=p[T]=\{x\mid \exists y\ (x,y)\in [T]\}$ for some subtree $T$ of $(\NN\times\NN)^{<\NN}$. 
+
+\begin{lemma} \label{characterization of analytic sets} 
+\begin{enumerate-(1)} 
+\item \label{characterization of analytic sets - closure} 
+The class of ${}^*$analytic sets is closed under countable unions and intersections. 
+%It follows that every Borel subset of $\NN^\NN$ is ${}^*$analytic. 
+%\emph{(Hint: first show that the intersection of two ${}^*$analytic sets is again ${}^*$analytic by merging trees projecting to the sets.) } 
+\item 
+Every analytic subset of $\NN^\NN$ is ${}^*$analytic. 
+%\emph{(Hint: this is an easy consequence of (a).) } 
+\end{enumerate-(1)} 
+\end{lemma} 
+\begin{proof} 
+(1) 
+Closure under countable unions is easily seen by forming unions of disjointified trees. 
+
+Closure under countable intersections is proved by merging trees. 
+We do only the case of two trees, since the general case is similar. 
+So suppose that $T_0$ and $T_1$ are subtrees of $(\NN\times \NN)^{{<}\NN}$. 
+We identify elements of $(\NN\times \NN)^{{<}\NN}$ with pairs of sequences. 
+For $t\in \NN^{{<\NN}}$, define $t^0, t^1\in \NN^{{<}\NN}$ by letting $t^0(i)=t(2i)$ if $2i<k$ and $t^1(i)=t(2i+1)$ if $2i+1<k$. 
+Let $U$ be the subtree of $(\NN\times \NN)^{{<}\NN}$ that consists of all $(s,t)\in (\NN\times \NN)^k$ with $(s,t^0)\in S$ and $(s,t^1)\in T_1$. 
+One can now check that $p[S]\cap p[T]=p[U]$. 
+
+(2) 
+The collection of subsets generated from basic open sets by countable unions and intersections forms a $\sigma$-algebra and thus equals the Borel $\sigma$-algebra. 
+Hence all Borel sets are ${}^*$analytic. 
+The claim follows by composing two projections. 
+\end{proof} 
+
+
+The previous result also holds for finite products of $\NN^\NN$, by observing that the proof still works or noting that they are homeomorphic to $\NN^\NN$. 
+
+In the next proof, subsets $A$, $B$ of $X$ are called \emph{Borel separated} if there is a Borel set $C$ with $A\subseteq C$ and $B\subseteq X\setminus C$. 
+
+\begin{proposition} \label{separation of analytic sets} 
+Any two disjoint analytic subsets $A$, $B$ of $X$ are Borel separated. 
+\end{proposition} 
+\begin{proof} 
+It suffices to show this for $X=\NN^\NN$, and by Problem \ref{characterization of analytic sets} $A$ and $B$ are then *analytic. 
+It follows that there are continuous surjections $f\colon [S]\rightarrow A$ and $g\colon [T]\rightarrow B$, where $S$ and $T$ are pruned subtrees of $\NN^{<\NN}$. 
+%\footnote{One can assume that $[S]=[T]=\NN^\NN$ to simplify the notation at the expense of using Lemma \ref{analytic sets as continuous images of N^N}. } 
+It is an easy to see that there is a continuous surjection from $\NN^\NN$ onto $[S]$, in fact one that fixes all elements of $[S]$. 
+We can thus assume that $[S]=[T]=\NN^\NN$. 
+%\todo{We can assume $[S]=[T]=\NN^\NN$ anyway, by using retractions from $\NN^\NN$ onto them. } 
+
+Suppose that $A$, $B$ are not Borel separated. 
+We then construct increasing sequences $\vec{s}=\langle s_i\mid i\in\NN\rangle$ and $\vec{t}=\langle t_i\mid i\in\NN\rangle$ in $\NN^{<\NN}$ such that for all $i\in\NN$, $f(N_{s_i})$ and $g(N_{t_i})$ are not Borel separated as follows. 
+
+Let $s_0=t_0=\emptyset$. 
+Given $s_i$ and $t_i$, there are $k,m\in \NN$ such that $f(N_{s_i k})$ and $g(N_{t_i m})$ are not Borel separated. 
+If each of these pairs were Borel separated by some $B_{k,m}$, then $C_k=\bigcap_{t_i m\in T} B_{k,m}$ separates $f(N_{s_i k})$ and $g(N_{t_i})$ for each $k\in\NN$, and hence $C=\bigcup_{s_i k\in S} C_k$ separates $f(N_{s_i})$ and $g(N_{t_i})$, contradicting our assumption. 
+Let $s_{i+1}=s_i k$ and $t_{i+1}= t_i m$. 
+
+Let $x=\bigcup_{i\in\NN} s_i\in [S]$ and $y=\bigcup_{i\in\NN} t_i\in [T]$. 
+Since $A$ and $B$ are disjoint, $f(x)\neq g(y)$. 
+Let further $U$, $V$ be disjoint open subsets of $X$ with $f(x)\in U$ and $g(y)\in V$. 
+By continuity of $f$ and $g$, $f(N_{x{\upharpoonright}n})\subseteq U$ and $g(N_{y{\upharpoonright}n})\subseteq V$ for sufficiently large $n\in\NN$, so $f(N_{x{\upharpoonright}n})$ and $g(N_{y{\upharpoonright}n})$ are Borel separated. 
+However, they are not Borel separated by the construction. 
+%But this contradicts the construction. 
+\end{proof} 
+
+Next is a very useful characterization of analytic sets. 
+
+\begin{lemma} \label{analytic sets as continuous images of N^N} 
+Every nonempty analytic subset of $X$ is the range of some continuous $f\colon \NN^\NN\rightarrow X$. 
+\end{lemma} 
+\begin{proof} 
+%Since every nonempty Polish space is a continuous image of $\NN^\NN$ by the remark after Lemma \ref{Polish space as continuous image}, it suffices to find some continuous $f\colon Y\rightarrow X$ with $f(Y)=X$. 
+Take an analytic subset $A$ of $X$. By Lemma \ref{Polish space as continuous image}, there are a closed subset $Y$ of $\NN^\NN$ and a continuous Borel isomorphism $f\colon Y\rightarrow X$. 
+It suffices to find a continuous bijection $g\colon \NN^\NN\rightarrow f^{-1}(A)$. 
+Then $A$ equals the range of $fg\colon \NN^\NN\rightarrow X$. 
+%Since $f$ is continuous, it suffices to find a continuous $g\colon Z\rightarrow \NN^\NN$ with $g(Z)=B:=f^{-1}(A)$. 
+
+Since analytic sets are preserved under Borel isomorphisms, $f^{-1}(A)$ is an analytic subset of $Y$ and thus of $\NN^\NN$. 
+Let $B$ be a Borel subset of $\NN^\NN\times \NN^\NN$ with $f^{-1}(A)=p(B)$. 
+Since Borel subsets of $\NN^\NN\times \NN^\NN$ are *analytic by Problem \ref{characterization of analytic sets} \ref{characterization of analytic sets - closure}, there is a closed subset $C$ of $(\NN^\NN)^3$ with $f^{-1}(A)=p(C)$. 
+Since $(\NN^\NN)^3$ and  $\NN^\NN$ are homeomorphic, it is easy to see that there is a continuous surjection $h\colon \NN^\NN\rightarrow C$. Then $g=fph$ is as required. 
+\end{proof} 
+
+
+
+
+
+
+%%%%%%%%%%%%
+\section{Borel measurable functions} 
+
+A function $f\colon X\rightarrow Y$ between standard Borel spaces is called \emph{Borel measurable} if $f$-preimages of Borel sets are Borel. 
+%A function $f\colon X\rightarrow Y$ is called \emph{Borel measurable} if for every Borel subset $C$ of $Y$, $f^{-1}(C)$ is a Borel subset of $X$. 
+
+\begin{lemma} 
+The following are equivalent for a function $f\colon X\rightarrow Y$: 
+\begin{enumerate-(a)} 
+\item 
+$f$ is Borel measurable. 
+\item 
+The graph $G(f)$ of $f$ is a Borel subset of $X\times Y$. 
+\end{enumerate-(a)} 
+\end{lemma} 
+\begin{proof} 
+(a) $\Rightarrow$ (b): $f(x)=y$ $\Longleftrightarrow$ $x\in \bigcap_{k\in \NN} f^{-1}(N_{y{\upharpoonright}k})$ $\Longleftrightarrow$ $(x,y)\in \bigcap_{k\in\NN} \bigcup_{t\in \NN^k} f^{-1}(N_t) \times N_t$. 
+
+(b) $\Rightarrow$ (a): 
+It suffices to show that $f^{-1}(U)$ is Borel for any open subset of $Y$. 
+By Proposition \ref{separation of analytic sets}, it is sufficient to show that both $f^{-1}(U)$ and its complement in $X$ are analytic. 
+These claims follows from the equivalences $x\in f^{-1}(U) \Longleftrightarrow \exists y\in Y\ (x,y)\in G(f) \Longleftrightarrow \forall y\in Y\ ((x,y)\in G(f)\Rightarrow y\in U)$. 
+\end{proof} 
+
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{references}
+  
+\end{document}
