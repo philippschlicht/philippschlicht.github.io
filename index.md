@@ -5,9 +5,9 @@ title: "Home"
 
 
 <br>
-My research areas are 
+My research areas are
 <!--field is mathematical logic, in particular set theory, large cardinals, -->
-infinite combinatorics, descriptive set theory and applications to topology, analysis, model theory, graph theory, computability and theoretical computer science.
+descriptive set theory, infinite combinatorics and applications to topology, analysis, model theory, graph theory, computability and theoretical computer science.
 
 I work on the EPSRC project ''Graphs on generalised Baire spaces'' with <a href="https://people.maths.bris.ac.uk/~mapdw/">Prof. Philip Welch</a> at the University of Bristol.
 <!--The project aims to understand the structure of large graphs that satisfy topological conditions.-->
