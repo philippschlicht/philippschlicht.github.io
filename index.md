@@ -16,6 +16,8 @@ We study this problem in the context of graphs of a specified complexity such as
 The study of such graphs led Todorcevic to devise the open colouring axiom.
 We aim to understand graphs and hypergraphs of finite and infinite dimension on large spaces that appear naturally in set theory and model theory.
 
-I previously worked at the School of Mathematics at the Universty of Bristol and currently I am a Research Fellow at the School of Computer Science at the University of Auckland. 
+I previously worked at the School of Mathematics at the Universty of Bristol and currently I am a Research Fellow at the School of Computer Science at the University of Auckland.
+
+Here are my <a href="">research</a> and <a href="">teaching</a> statements.
 
 <!--This belong to a field with exciting connections with infinite combinatorics and large cardinals and applications to descriptive set theory and classification problems.-->
