@@ -20,4 +20,4 @@ social:
 - {icon: 'github', link: 'https://github.com/philippschlicht'}
 
 contacts:
-- {name: 'Philipp Schlicht', department: 'Dipartimento di ingegneria dell'informazione e scienze matematiche', institution: 'Universit`a di Siena, institution_address: 'San Niccolò, via Roma, 56, 53100 Siena - Italia', email: 'philipp.schlicht@unisi.it', office: 'tba', image: 'assets/img/selfie20210903.jpg'}
+- {name: 'Philipp Schlicht', department: 'Dipartimento di ingegneria dell'informazione e scienze matematiche', institution: 'Universit`a di Siena, institution_address: 'San Niccolò, via Roma, 56 - 53100 Siena - Italia', email: 'philipp.schlicht@unisi.it', office: 'tba', image: 'assets/img/selfie20210903.jpg'}
