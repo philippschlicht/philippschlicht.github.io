@@ -3,8 +3,6 @@ layout: home
 title: "Home"
 ---
 
-
-<br>
 I work at the <a href="https://www.diism.unisi.it/it">dipartimento di ingegneria dell'informazione e scienze matematiche</a> of the university of Siena as a tenure track researcher (rtt).
 
 My research is in
