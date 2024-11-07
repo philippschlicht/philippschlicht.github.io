@@ -5,8 +5,6 @@ title: "Home"
 
 
 <br>
-TEST TEST 
-
 My research is in
 <!--areas are field is mathematical logic, in particular set theory, large cardinals, -->
 descriptive set theory, infinite combinatorics and applications to topology, analysis, model theory, graph theory, computability and theoretical computer science.
