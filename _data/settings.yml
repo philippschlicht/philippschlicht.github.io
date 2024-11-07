@@ -6,8 +6,6 @@ menu:
 - {name: 'meetings', url: '/meetings'}
 - {name: 'contact', url: '/contact'}
 
-
-
 people:
 - {name: 'Primary Investigator', title: 'Researcher', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/primary-investigator.jpg', url: 'primary-investigator'}
 - {name: 'Lab Technician', title: 'Researcher', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/lab-technician.jpg', url: 'lab-technician'}
@@ -21,6 +19,5 @@ courses:
 social:
 - {icon: 'github', link: 'https://github.com/philippschlicht'}
 
-
 contacts:
-- {name: 'Philipp Schlicht', department: 'School of Mathematics', institution: 'University of Bristol', institution_address: 'Fry Building, Woodland Road, Bristol, BS8 1UG, UK', email: 'philipp.schlicht@bristol.ac.uk', office: 'Fry Building 1.10', image: 'assets/img/selfie20210903.jpg'}
+- {name: 'Philipp Schlicht', department: 'Dipartimento di ingegneria dell'informazione e scienze matematiche', institution: 'Universit`a di Siena, institution_address: 'San Niccolò, via Roma, 56, 53100 Siena - Italia', email: 'philipp.schlicht@unisi.it', office: 'tba', image: 'assets/img/selfie20210903.jpg'}
