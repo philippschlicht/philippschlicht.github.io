@@ -3,7 +3,7 @@ layout: home
 title: "Home"
 ---
 
-I work at the <a href="https://www.diism.unisi.it/it">dipartimento di ingegneria dell'informazione e scienze matematiche</a> of the university of Siena as a tenure track researcher (rtt).
+I work at the <a href="https://www.diism.unisi.it/it">dipartimento di ingegneria dell'informazione e scienze matematiche</a> of the University of Siena as a tenure track researcher (rtt).
 
 My research is in
 <!--areas are field is mathematical logic, in particular set theory, large cardinals, -->
