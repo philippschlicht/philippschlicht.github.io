@@ -12,7 +12,8 @@ descriptive set theory, infinite combinatorics and applications to topology, ana
 <!--I work on the EPSRC project ''Graphs on generalised Baire spaces'' with <a href="https://people.maths.bris.ac.uk/~mapdw/">Prof. Philip Welch</a> at the University of Bristol.-->
 <!--The project aims to understand the structure of large graphs that satisfy topological conditions.-->
 
-For instance, I am currently interested in colourings of definable graphs and hypergraphs in descriptive combinatorics and connections with infinite combinatorics such as the Todorcevic's open colouring axiom.
+For instance, I am interested in colourings of definable graphs and hypergraphs in descriptive combinatorics and connections with infinite combinatorics such as the Todorcevic's open colouring axiom.
+Another topic of interest to me is oligomorphic groups. 
 
 I am a board member and Secretary of the <a href="http://settheory.eu">European Set Theory Society</a>.
 
