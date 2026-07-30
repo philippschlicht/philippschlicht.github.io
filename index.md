@@ -14,7 +14,7 @@ descriptive set theory, infinite combinatorics and applications to topology, ana
 
 For instance, I am currently interested in colourings of definable graphs and hypergraphs in descriptive combinatorics and connections with infinite combinatorics such as the Todorcevic's open colouring axiom.
 
-I am a board member and Secretary of the <a href="www.settheory.eu">European Set Theory Society</a>.
+I am a board member and Secretary of the <a href="http://settheory.eu">European Set Theory Society</a>.
 
 <!-- A typical problem of descriptive combinatorics is under
 which circumstances you can colour a graph with few colours such that no adjacent vertices are assigned the same colour.
