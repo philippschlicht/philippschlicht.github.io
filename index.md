@@ -14,7 +14,7 @@ descriptive set theory, infinite combinatorics and applications to topology, ana
 
 For instance, I am interested in definable graphs and hypergraphs in descriptive combinatorics, connections with infinite combinatorics such as the Todorcevic's open colouring axiom and oligomorphic groups.
 
-I have a scientific habilitation (ASN) for associate professors in Italy and a habilation in Germany.
+I have a scientific habilitation (ASN) for associate professors in Italy and a scientific habilitation in Germany.
 
 I am a board member and Secretary of the <a href="http://settheory.eu">European Set Theory Society</a>.
 
