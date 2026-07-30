@@ -13,7 +13,9 @@ descriptive set theory, infinite combinatorics and applications to topology, ana
 <!--The project aims to understand the structure of large graphs that satisfy topological conditions.-->
 
 For instance, I am interested in colourings of definable graphs and hypergraphs in descriptive combinatorics and connections with infinite combinatorics such as the Todorcevic's open colouring axiom.
-Another topic of interest to me is oligomorphic groups. 
+Another topic of interest to me is oligomorphic groups.
+
+I have a scientific habilitation (ASN) for associate professors in Italy and a habilation in Germany. 
 
 I am a board member and Secretary of the <a href="http://settheory.eu">European Set Theory Society</a>.
 
